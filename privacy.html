@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – GeneGaze</title>
+  <meta name="description" content="GeneGaze Privacy Policy. All genetic analysis runs locally on your device. Your DNA data never leaves your device.">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root{--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-hero:clamp(3rem,.5rem + 7vw,8rem);--sp1:.25rem;--sp2:.5rem;--sp3:.75rem;--sp4:1rem;--sp5:1.25rem;--sp6:1.5rem;--sp8:2rem;--sp10:2.5rem;--sp12:3rem;--sp16:4rem;--sp20:5rem;--sp24:6rem;--r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;--r-xl:1rem;--r-2xl:1.5rem;--r-full:9999px;--t:180ms cubic-bezier(.16,1,.3,1);--w:960px;--fw:1200px;--fd:'Zodiak','Georgia',serif;--fb:'Satoshi','Inter',sans-serif}
+    [data-theme="dark"],:root{--bg:#0b0c12;--surf:#10111a;--card:#161829;--div:rgba(255,255,255,.07);--bdr:rgba(255,255,255,.10);--tx:#e8e9f0;--mu:#8e90a8;--fa:#4a4c62;--pr:#4fc3ce;--pg:rgba(79,195,206,.18);--gd:#d4a847;--gg:rgba(212,168,71,.15);--sh:0 12px 40px rgba(0,0,0,.6);--gl:0 0 48px rgba(79,195,206,.12)}
+    [data-theme="light"]{--bg:#f4f3f0;--surf:#f9f8f5;--card:#fff;--div:rgba(0,0,0,.07);--bdr:rgba(0,0,0,.10);--tx:#1a1c2e;--mu:#6b6d85;--fa:#a9abbe;--pr:#0d7a85;--pg:rgba(13,122,133,.12);--gd:#a07820;--gg:rgba(160,120,32,.10);--sh:0 12px 40px rgba(0,0,0,.14);--gl:0 0 40px rgba(13,122,133,.08)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{min-height:100dvh;font-family:var(--fb);font-size:var(--text-base);color:var(--tx);background:var(--bg);overflow-x:hidden}
+    h1,h2,h3{font-family:var(--fd);text-wrap:balance;line-height:1.12}
+    p,li{text-wrap:pretty}
+    button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+    a{color:inherit;text-decoration:none}
+    a,button{transition:color var(--t),background var(--t),opacity var(--t),box-shadow var(--t),border-color var(--t),transform var(--t)}
+    :focus-visible{outline:2px solid var(--pr);outline-offset:3px;border-radius:var(--r-sm)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    .wrap{max-width:var(--w);margin-inline:auto;padding-inline:var(--sp6)}
+
+    #stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
+    [data-theme="light"] #stars{opacity:.10}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--sp4) var(--sp6);display:flex;align-items:center;justify-content:space-between;background:color-mix(in oklch,var(--bg) 80%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--div)}
+    .logo{display:flex;align-items:center;gap:var(--sp2);font-family:var(--fd);font-size:var(--text-lg);font-weight:700;letter-spacing:-.02em}
+    .logo-star{color:var(--gd)}
+    .nav-r{display:flex;align-items:center;gap:var(--sp3)}
+    .tbtn{width:36px;height:36px;border-radius:var(--r-full);background:var(--card);border:1px solid var(--bdr);color:var(--mu);display:flex;align-items:center;justify-content:center}
+    .tbtn:hover{color:var(--tx);border-color:var(--pr)}
+    .ncta{display:inline-flex;align-items:center;gap:var(--sp2);padding:var(--sp2) var(--sp4);background:var(--pg);border:1px solid var(--pr);border-radius:var(--r-full);font-size:var(--text-sm);font-weight:600;color:var(--pr)}
+    .ncta:hover{background:var(--pr);color:var(--bg)}
+
+    footer{border-top:1px solid var(--div);padding-block:var(--sp8);z-index:1;position:relative}
+    .finner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp4)}
+    .fcopy{font-size:var(--text-xs);color:var(--fa)}
+    .flinks{display:flex;gap:var(--sp5);position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:none;padding:0;left:auto;right:auto;z-index:auto}
+    .flinks a{font-size:var(--text-xs);color:var(--fa)}
+    .flinks a:hover{color:var(--mu)}
+
+    .page-header{position:relative;z-index:1;padding:calc(var(--sp20) + 60px) var(--sp6) var(--sp12);text-align:center}
+    .page-header h1{font-size:var(--text-2xl);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp3)}
+    .page-header h1 em{font-style:normal;color:var(--pr)}
+    .page-subtitle{font-size:var(--text-sm);color:var(--fa)}
+
+    .content{position:relative;z-index:1;padding-bottom:var(--sp20)}
+    .content-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-2xl);padding:clamp(var(--sp8),5vw,var(--sp16));max-width:var(--w);margin-inline:auto;box-shadow:var(--sh)}
+
+    .content-card h2{font-family:var(--fd);font-size:var(--text-xl);font-weight:700;letter-spacing:-.02em;margin-top:var(--sp10);margin-bottom:var(--sp4);color:var(--tx)}
+    .content-card h2:first-child{margin-top:0}
+    .content-card h3{font-family:var(--fd);font-size:var(--text-lg);font-weight:600;margin-top:var(--sp8);margin-bottom:var(--sp3);color:var(--tx)}
+
+    .content-card p{font-size:var(--text-base);color:var(--mu);line-height:1.72;margin-bottom:var(--sp4)}
+    .content-card ul,.content-card ol{margin-bottom:var(--sp4);padding-left:var(--sp6)}
+    .content-card li{font-size:var(--text-base);color:var(--mu);line-height:1.72;margin-bottom:var(--sp2)}
+    .content-card strong{color:var(--tx);font-weight:600}
+
+    .promise-box{background:var(--pg);border:1px solid var(--pr);border-radius:var(--r-xl);padding:var(--sp6) var(--sp8);margin-bottom:var(--sp8)}
+    .promise-box p{color:var(--pr);font-weight:500;margin-bottom:0}
+    .promise-box strong{color:var(--pr)}
+
+    .divider{height:1px;background:var(--div);margin-block:var(--sp8);border:none}
+
+    .contact-box{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r-xl);padding:var(--sp6) var(--sp8);margin-top:var(--sp8);text-align:center}
+    .contact-box p{margin-bottom:var(--sp2)}
+    .contact-box a{color:var(--pr);font-weight:600}
+    .contact-box a:hover{opacity:.8}
+
+    @media(max-width:480px){nav{padding:var(--sp3) var(--sp4)}}
+  </style>
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="GeneGaze home">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2" opacity=".18"/>
+        <circle cx="16" cy="6"  r="1.8" fill="var(--pr)"/><circle cx="25" cy="12" r="1.4" fill="var(--pr)" opacity=".8"/><circle cx="25" cy="22" r="1.4" fill="var(--pr)" opacity=".8"/><circle cx="16" cy="26" r="1.8" fill="var(--pr)"/><circle cx="7"  cy="22" r="1.4" fill="var(--pr)" opacity=".8"/><circle cx="7"  cy="12" r="1.4" fill="var(--pr)" opacity=".8"/>
+        <line x1="16" y1="6"  x2="25" y2="12" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="25" y1="12" x2="25" y2="22" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="25" y1="22" x2="16" y2="26" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="16" y1="26" x2="7"  y2="22" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="7"  y1="22" x2="7"  y2="12" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="7"  y1="12" x2="16" y2="6"  stroke="var(--pr)" stroke-width=".8" opacity=".5"/>
+        <circle cx="16" cy="16" r="4.5" fill="none" stroke="var(--gd)" stroke-width=".9" opacity=".7"/><circle cx="16" cy="16" r="1.6" fill="var(--gd)"/>
+        <line x1="25" y1="16" x2="20.5" y2="16" stroke="var(--pr)" stroke-width=".8" opacity=".5"/>
+      </svg>
+      <span>GeneGaze</span><span class="logo-star">&thinsp;&#10022;</span>
+    </a>
+    <div class="nav-r">
+      <button class="tbtn" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="index.html" class="ncta"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>&nbsp;Home</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1><em>Privacy</em> Policy</h1>
+    <p class="page-subtitle">Last updated: March 14, 2026</p>
+  </header>
+
+  <main class="content">
+    <div class="wrap">
+      <div class="content-card">
+
+        <div class="promise-box">
+          <p><strong>Core Promise:</strong> GeneGaze performs all genetic analysis entirely on your device. Your genetic data never leaves your device. No servers ever handle your genetic information.</p>
+        </div>
+
+        <h2>Information We Do <em style="font-style:normal;color:var(--pr)">Not</em> Collect</h2>
+        <p>GeneGaze does not collect, transmit, or store any of the following:</p>
+        <ul>
+          <li>Raw genome files (VCF, 23andMe, AncestryDNA, or any other format)</li>
+          <li>Parsed SNP data or genotype information</li>
+          <li>Health marker analysis results</li>
+          <li>Medication response profiles</li>
+          <li>Any derivative of your genetic information</li>
+        </ul>
+        <p>Your DNA data is processed locally using your device's own computing power. At no point is any genetic data sent to any server, API, or third-party service.</p>
+
+        <hr class="divider">
+
+        <h2>Information We May Collect</h2>
+
+        <h3>Apple Account Information</h3>
+        <p>When you purchase GeneGaze through the App Store, Apple processes your payment. We receive only a transaction receipt confirming your purchase. We do not receive your name, email address, or payment details.</p>
+
+        <h3>App Analytics (Optional)</h3>
+        <p>If you have opted into sharing analytics with developers through your Apple device settings, we may receive aggregated, anonymized usage data provided by Apple. This data contains no genetic information and cannot be used to identify individual users.</p>
+
+        <h3>Crash Reports (Optional)</h3>
+        <p>If you have opted into sharing crash data, we may receive anonymized technical information about app crashes. These reports contain only technical diagnostic data (device model, OS version, crash stack traces) and never contain genetic data or analysis results.</p>
+
+        <hr class="divider">
+
+        <h2>How Your Data Is Stored</h2>
+        <p>All analysis results are stored locally on your device using IndexedDB, a browser-standard local storage mechanism.</p>
+        <ul>
+          <li>Your data exists only on your device</li>
+          <li>Clearing your browser or app data will permanently delete all stored results</li>
+          <li>There is no cloud sync, no server backup, and no remote copy of your data</li>
+          <li>Uninstalling GeneGaze removes all associated data from your device</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h2>Data Sharing</h2>
+        <p>We do not sell, rent, trade, or share your personal or genetic data with any third party. Period.</p>
+        <p>The email report feature uses your device's native sharing capabilities. When you export and share a PDF report, the file is generated locally and shared through your device's built-in sharing interface. It does not pass through our servers.</p>
+
+        <hr class="divider">
+
+        <h2>Third-Party Services</h2>
+        <p>GeneGaze uses the following third-party services:</p>
+        <ul>
+          <li><strong>Apple App Store / StoreKit</strong> &mdash; For purchase processing and transaction verification only. Subject to <a href="https://www.apple.com/legal/privacy/" style="color:var(--pr)" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.</li>
+        </ul>
+        <p>We do not integrate with any analytics platforms, advertising networks, or tracking services beyond the optional, anonymized Apple analytics described above.</p>
+
+        <hr class="divider">
+
+        <h2>Children's Privacy</h2>
+        <p>GeneGaze is not directed at children under the age of 13. We do not knowingly collect any personal information from children.</p>
+
+        <hr class="divider">
+
+        <h2>Security</h2>
+        <p>The strongest security measure we take is architectural: your genetic data never leaves your device, so it cannot be intercepted, breached, or leaked from a server we don't have.</p>
+        <p>We recommend the following best practices to protect your data on-device:</p>
+        <ul>
+          <li>Keep your device's operating system up to date</li>
+          <li>Use a strong passcode or biometric lock on your device</li>
+          <li>Be mindful of who has physical access to your device</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h2>Your Rights</h2>
+        <p>You have full control over your data at all times:</p>
+        <ul>
+          <li><strong>Access</strong> &mdash; All your data is visible directly within the app. There is nothing stored remotely that you cannot see.</li>
+          <li><strong>Deletion</strong> &mdash; You can delete your data at any time by clearing app data or uninstalling GeneGaze.</li>
+          <li><strong>Portability</strong> &mdash; You can export your analysis as a PDF report at any time.</li>
+          <li><strong>No account required</strong> &mdash; GeneGaze does not require you to create an account, provide an email address, or share any personal information to use the app.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h2>GDPR &amp; CCPA Compliance</h2>
+        <p>Since GeneGaze does not collect or store genetic data on any server, many traditional data protection obligations do not apply in the conventional sense. However, we are committed to the spirit of these regulations:</p>
+        <ul>
+          <li>We minimize data collection to the absolute minimum necessary</li>
+          <li>We provide full transparency about what data exists and where</li>
+          <li>We give you complete control over your data</li>
+          <li>We never sell or share personal information</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h2>Changes to This Policy</h2>
+        <p>If we update this privacy policy, the changes will be reflected on this page with an updated date. We encourage you to review this page periodically.</p>
+
+        <div class="contact-box">
+          <p><strong>Questions about privacy?</strong></p>
+          <p>Reach out on Instagram: <a href="https://instagram.com/GeneGaze" target="_blank" rel="noopener noreferrer">@GeneGaze</a></p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap finner">
+      <p class="fcopy">&copy; 2026 GeneGaze. Coming soon to the App Store.</p>
+      <nav class="flinks" aria-label="Footer"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://instagram.com/GeneGaze" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
+    </div>
+  </footer>
+
+  <script>
+    (function(){const c=document.getElementById('stars'),x=c.getContext('2d');let s=[];function resize(){c.width=window.innerWidth;c.height=document.body.scrollHeight||window.innerHeight*4;s=[];for(let i=0;i<260;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+.3,a:Math.random()*6.28,sp:Math.random()*.001+.0003});}function draw(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{p.a+=p.sp;const al=.25+Math.abs(Math.sin(p.a))*.75;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle=`rgba(255,255,255,${al})`;x.fill();});requestAnimationFrame(draw);}window.addEventListener('resize',resize);resize();draw();})();
+    (function(){const btn=document.querySelector('[data-theme-toggle]'),root=document.documentElement;let t='dark';function set(v){t=v;root.setAttribute('data-theme',v);if(btn){btn.setAttribute('aria-label','Switch to '+(v==='dark'?'light':'dark')+' mode');btn.innerHTML=v==='dark'?'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}}if(btn)btn.addEventListener('click',()=>set(t==='dark'?'light':'dark'));set('dark');})();
+  </script>
+</body>
+</html>
