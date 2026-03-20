@@ -317,7 +317,7 @@
           <p class="sbody">Every signal gets its weight (clinical priority), its constellation (body system), and its horizon — what it means and what you can actually do next. As educational as possible, by design.</p>
         </div>
         <div class="wimg fi">
-          <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/1b595d86-c813-4e81-8db8-a52ed81e6a7f.png" alt="GeneGaze StarMap — human body rendered as a constellation map" width="600" height="600" loading="lazy">
+          <img src="app-constellations.png" alt="GeneGaze app showing constellation categories — Immune & Inflammation, Cancer, Heart & Blood, and more" width="390" height="844" loading="lazy" style="border-radius:var(--r-xl);box-shadow:var(--sh);max-width:320px">
         </div>
       </div>
     </div>
@@ -452,111 +452,16 @@
     <div class="wrap">
       <div class="pgrid">
         <div class="fi" style="display:flex;justify-content:center">
-          <!-- Inline SVG phone mockup — GeneGaze branded, dark theme, new categories -->
-          <div class="pphone" style="width:280px;margin-inline:auto" aria-label="GeneGaze app preview on a phone">
-            <svg viewBox="0 0 280 580" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
-              <defs>
-                <linearGradient id="ph-grad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#4fc3ce"/>
-                  <stop offset="100%" stop-color="#8b5cf6"/>
-                </linearGradient>
-              </defs>
-              <!-- Phone frame -->
-              <rect x="2" y="2" width="276" height="576" rx="36" fill="#0b0c12" stroke="#2a2d42" stroke-width="2"/>
+          <!-- Actual app screenshot in a phone frame -->
+          <div class="pphone" style="width:280px;margin-inline:auto;position:relative" aria-label="GeneGaze app preview on a phone">
+            <div style="background:#0b0c12;border-radius:36px;border:2px solid #2a2d42;overflow:hidden;padding:8px 8px 4px;box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(79,195,206,.06)">
               <!-- Notch -->
-              <rect x="90" y="6" width="100" height="24" rx="12" fill="#161829"/>
-              <!-- GeneGaze wordmark at top -->
-              <text x="140" y="50" text-anchor="middle" fill="#8e90a8" font-family="sans-serif" font-size="10" font-weight="500">GeneGaze</text>
-              <!-- DNA + star logo mark -->
-              <line x1="125" y1="66" x2="155" y2="66" stroke="#4fc3ce" stroke-width=".5" opacity=".3"/>
-              <circle cx="128" cy="62" r="2" fill="#4fc3ce" opacity=".7"/>
-              <circle cx="140" cy="68" r="2.2" fill="#8b5cf6" opacity=".65"/>
-              <circle cx="152" cy="62" r="1.8" fill="#4fc3ce" opacity=".6"/>
-              <circle cx="140" cy="58" r="3" fill="#d4a847" opacity=".9"/>
-              <!-- Heading -->
-              <text x="140" y="88" text-anchor="middle" fill="#e8e9f0" font-family="Georgia,serif" font-size="14" font-weight="700">Your StarMap</text>
-              <text x="140" y="104" text-anchor="middle" fill="#8e90a8" font-size="9">1,000 variants screened</text>
-
-              <!-- Row 1 cards -->
-              <rect x="18" y="118" width="114" height="58" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="30" y="136" fill="#e8e9f0" font-size="13">🛡️</text>
-              <text x="50" y="136" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Immune &amp;</text>
-              <text x="50" y="148" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Inflammation</text>
-              <text x="50" y="161" fill="#8e90a8" font-size="7">8 signals found</text>
-              <text x="50" y="171" fill="#d4a847" font-size="7">2 notable</text>
-
-              <rect x="148" y="118" width="114" height="58" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="160" y="136" fill="#e8e9f0" font-size="13">🔬</text>
-              <text x="180" y="136" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Cancer</text>
-              <text x="180" y="150" fill="#8e90a8" font-size="7">4 signals found</text>
-              <text x="180" y="162" fill="#ef4444" font-size="7">1 high priority</text>
-              <text x="180" y="172" fill="#8e90a8" font-size="7">review with doctor</text>
-
-              <!-- Row 2 cards -->
-              <rect x="18" y="184" width="114" height="58" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="30" y="202" fill="#e8e9f0" font-size="13">❤️</text>
-              <text x="50" y="202" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Heart &amp; Blood</text>
-              <text x="50" y="215" fill="#8e90a8" font-size="7">5 signals found</text>
-              <text x="50" y="227" fill="#3b82f6" font-size="7">1 worth noting</text>
-              <text x="50" y="237" fill="#8e90a8" font-size="7" opacity=".7">clotting pathway</text>
-
-              <rect x="148" y="184" width="114" height="58" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="160" y="202" fill="#e8e9f0" font-size="13">💊</text>
-              <text x="180" y="202" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Medications</text>
-              <text x="180" y="215" fill="#8e90a8" font-size="7">9 signals found</text>
-              <text x="180" y="227" fill="#f59e0b" font-size="7">3 notable</text>
-              <text x="180" y="237" fill="#8e90a8" font-size="7" opacity=".7">CYP2C19 variant</text>
-
-              <!-- North Star Report -->
-              <rect x="18" y="252" width="244" height="76" rx="10" fill="#161829" stroke="#d4a84740" stroke-width="1"/>
-              <circle cx="34" cy="270" r="7" fill="#d4a847" opacity=".25"/>
-              <text x="34" y="274" text-anchor="middle" fill="#d4a847" font-size="10">✦</text>
-              <text x="50" y="268" fill="#e8e9f0" font-family="Georgia,serif" font-size="10" font-weight="700">North Star Report</text>
-              <text x="50" y="282" fill="#8e90a8" font-size="7.5">Your most significant findings</text>
-              <!-- Priority star chart -->
-              <circle cx="60" cy="312" r="5.5" fill="#ef4444" opacity=".75"/>
-              <circle cx="100" cy="305" r="4.5" fill="#f59e0b" opacity=".7"/>
-              <circle cx="140" cy="316" r="4" fill="#f59e0b" opacity=".6"/>
-              <circle cx="180" cy="308" r="3.5" fill="#3b82f6" opacity=".6"/>
-              <circle cx="215" cy="314" r="2.5" fill="#94a3b8" opacity=".4"/>
-              <line x1="60" y1="312" x2="100" y2="305" stroke="#4fc3ce" stroke-width=".6" opacity=".2"/>
-              <line x1="100" y1="305" x2="140" y2="316" stroke="#4fc3ce" stroke-width=".6" opacity=".2"/>
-              <line x1="140" y1="316" x2="180" y2="308" stroke="#4fc3ce" stroke-width=".6" opacity=".2"/>
-              <line x1="180" y1="308" x2="215" y2="314" stroke="#4fc3ce" stroke-width=".6" opacity=".2"/>
-
-              <!-- Row 3 cards -->
-              <rect x="18" y="338" width="114" height="46" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="30" y="357" fill="#e8e9f0" font-size="12">⚡</text>
-              <text x="48" y="356" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Metabolism</text>
-              <text x="48" y="369" fill="#8e90a8" font-size="7">MTHFR detected</text>
-              <text x="48" y="379" fill="#f59e0b" font-size="7">see details</text>
-
-              <rect x="148" y="338" width="114" height="46" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="160" y="357" fill="#e8e9f0" font-size="12">🧠</text>
-              <text x="178" y="356" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Brain &amp; Mind</text>
-              <text x="178" y="369" fill="#8e90a8" font-size="7">3 signals found</text>
-              <text x="178" y="379" fill="#8e90a8" font-size="7">all low priority</text>
-
-              <rect x="18" y="392" width="114" height="46" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="30" y="411" fill="#e8e9f0" font-size="12">🧬</text>
-              <text x="48" y="410" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Reproductive</text>
-              <text x="48" y="423" fill="#8e90a8" font-size="7">2 signals found</text>
-              <text x="48" y="433" fill="#8e90a8" font-size="7">carrier status</text>
-
-              <rect x="148" y="392" width="114" height="46" rx="8" fill="#161829" stroke="#2a2d42" stroke-width=".8"/>
-              <text x="160" y="411" fill="#e8e9f0" font-size="12">✨</text>
-              <text x="178" y="410" fill="#e8e9f0" font-family="sans-serif" font-size="9" font-weight="600">Physical Traits</text>
-              <text x="178" y="423" fill="#d4a847" font-size="7">✦ The fun one</text>
-              <text x="178" y="433" fill="#8e90a8" font-size="7">eye color, taste…</text>
-
-              <!-- Bottom nav bar -->
-              <rect x="18" y="456" width="244" height="1" fill="#2a2d42"/>
-              <text x="60" y="480" text-anchor="middle" fill="#4fc3ce" font-size="8" font-weight="600">StarMap</text>
-              <text x="140" y="480" text-anchor="middle" fill="#8e90a8" font-size="8">Report</text>
-              <text x="220" y="480" text-anchor="middle" fill="#8e90a8" font-size="8">Settings</text>
+              <div style="width:100px;height:24px;border-radius:12px;background:#161829;margin:0 auto 8px"></div>
+              <!-- Actual screenshot -->
+              <img src="app-overview.png" alt="GeneGaze app — Overview tab showing DNA Snapshot with 612,924 SNPs analyzed, 673 markers found, Predicted Blood Type O, and risk level breakdown" width="390" height="844" loading="lazy" style="width:100%;height:auto;border-radius:8px;display:block">
               <!-- Home indicator -->
-              <rect x="105" y="552" width="70" height="4" rx="2" fill="#2a2d42"/>
-            </svg>
+              <div style="width:70px;height:4px;border-radius:2px;background:#2a2d42;margin:10px auto 6px"></div>
+            </div>
           </div>
         </div>
         <div class="fi">
