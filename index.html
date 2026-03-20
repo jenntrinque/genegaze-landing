@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeneGaze – StarGaze Your DNA</title>
   <meta name="description" content="GeneGaze turns your raw DNA into a personal StarMap — beautiful, clear, and actually actionable. Screens 1,000 clinically significant variants across 10 health categories. Coming soon to the App Store.">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
   <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
   <style>
     :root{--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-hero:clamp(3rem,.5rem + 7vw,8rem);--sp1:.25rem;--sp2:.5rem;--sp3:.75rem;--sp4:1rem;--sp5:1.25rem;--sp6:1.5rem;--sp8:2rem;--sp10:2.5rem;--sp12:3rem;--sp16:4rem;--sp20:5rem;--sp24:6rem;--r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;--r-xl:1rem;--r-2xl:1.5rem;--r-full:9999px;--t:180ms cubic-bezier(.16,1,.3,1);--w:960px;--fw:1200px;--fd:'Zodiak','Georgia',serif;--fb:'Satoshi','Inter',sans-serif}
@@ -320,7 +323,7 @@
           <p class="sbody">Every signal gets its weight (clinical priority), its constellation (body system), and its horizon — what it means and what you can actually do next. As educational as possible, by design.</p>
         </div>
         <div class="wimg fi">
-          <img src="constellation-body.jpg" alt="Human body rendered as a constellation of stars — representing how GeneGaze maps your genome like a night sky" width="600" height="600" loading="lazy" style="border-radius:var(--r-xl);box-shadow:var(--sh);max-width:360px;width:100%;height:auto">
+          <img src="constellation-body.jpg" alt="Human body rendered as a constellation of stars — representing how GeneGaze maps your genome like a night sky" width="600" height="600" loading="lazy">
         </div>
       </div>
     </div>
@@ -547,10 +550,14 @@
         <p class="slbl" style="text-align:center">Early access</p>
         <h2 id="wl-h">Be first to<br>see your sky.&thinsp;✦</h2>
         <p class="wsub">GeneGaze is almost ready for launch. Drop your email and you'll be the first to know when it lands on the App Store.</p>
-        <form class="wform" id="wl-form" novalidate>
+        <form class="wform" id="wl-form" action="https://formsubmit.co/jvfcqcrmfn@privaterelay.appleid.com" method="POST">
+          <input type="hidden" name="_subject" value="GeneGaze Early Access Signup">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://genegaze-landing.vercel.app/#waitlist">
           <label for="wl-email" class="sr-only">Email address</label>
           <input class="winput" type="email" id="wl-email" name="email" placeholder="your@email.com" autocomplete="email" required>
-          <button type="submit" class="btp">Notify me&thinsp;✦</button>
+          <button type="submit" class="btp" id="wl-btn">Notify me&thinsp;✦</button>
         </form>
         <div class="wconf" id="wl-conf" role="status" aria-live="polite">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -582,7 +589,7 @@
   <script>
     (function(){const c=document.getElementById('stars'),x=c.getContext('2d');let s=[];function resize(){c.width=window.innerWidth;c.height=document.body.scrollHeight||window.innerHeight*4;s=[];for(let i=0;i<260;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+.3,a:Math.random()*6.28,sp:Math.random()*.001+.0003});}function draw(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{p.a+=p.sp;const al=.25+Math.abs(Math.sin(p.a))*.75;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle=`rgba(255,255,255,${al})`;x.fill();});requestAnimationFrame(draw);}window.addEventListener('resize',resize);resize();draw();})();
     (function(){const btn=document.querySelector('[data-theme-toggle]'),root=document.documentElement;let t='dark';function set(v){t=v;root.setAttribute('data-theme',v);if(btn){btn.setAttribute('aria-label','Switch to '+(v==='dark'?'light':'dark')+' mode');btn.innerHTML=v==='dark'?'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}}if(btn)btn.addEventListener('click',()=>set(t==='dark'?'light':'dark'));set('dark');})();
-    (function(){const f=document.getElementById('wl-form'),c=document.getElementById('wl-conf');if(!f)return;f.addEventListener('submit',e=>{e.preventDefault();f.style.display='none';c.classList.add('show');});})();
+    (function(){const f=document.getElementById('wl-form'),c=document.getElementById('wl-conf'),b=document.getElementById('wl-btn');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();if(b){b.disabled=true;b.textContent='Sending...';}const d=new FormData(f);fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){f.style.display='none';c.classList.add('show');}).catch(function(){f.style.display='none';c.classList.add('show');});});})();
   </script>
 </body>
 </html>
