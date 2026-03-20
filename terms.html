@@ -86,14 +86,54 @@
 
   <nav aria-label="Main navigation">
     <a href="index.html" class="logo" aria-label="GeneGaze home">
-      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.2" opacity=".18"/>
-        <circle cx="16" cy="6"  r="1.8" fill="var(--pr)"/><circle cx="25" cy="12" r="1.4" fill="var(--pr)" opacity=".8"/><circle cx="25" cy="22" r="1.4" fill="var(--pr)" opacity=".8"/><circle cx="16" cy="26" r="1.8" fill="var(--pr)"/><circle cx="7"  cy="22" r="1.4" fill="var(--pr)" opacity=".8"/><circle cx="7"  cy="12" r="1.4" fill="var(--pr)" opacity=".8"/>
-        <line x1="16" y1="6"  x2="25" y2="12" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="25" y1="12" x2="25" y2="22" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="25" y1="22" x2="16" y2="26" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="16" y1="26" x2="7"  y2="22" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="7"  y1="22" x2="7"  y2="12" stroke="var(--pr)" stroke-width=".8" opacity=".5"/><line x1="7"  y1="12" x2="16" y2="6"  stroke="var(--pr)" stroke-width=".8" opacity=".5"/>
-        <circle cx="16" cy="16" r="4.5" fill="none" stroke="var(--gd)" stroke-width=".9" opacity=".7"/><circle cx="16" cy="16" r="1.6" fill="var(--gd)"/>
-        <line x1="25" y1="16" x2="20.5" y2="16" stroke="var(--pr)" stroke-width=".8" opacity=".5"/>
+      <!-- GeneGaze constellation DNA helix logo with gold north star -->
+      <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="gg-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--pr)" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="var(--pr)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="url(#gg-glow)"/>
+        <!-- Left helix strand -->
+        <circle cx="14" cy="5" r="1.1" fill="var(--pr)" opacity="0.7"/>
+        <circle cx="11" cy="10" r="1.3" fill="var(--pr)"/>
+        <circle cx="13" cy="15" r="1.1" fill="var(--pr)" opacity="0.85"/>
+        <circle cx="17" cy="20" r="1.0" fill="var(--pr)" opacity="0.7"/>
+        <circle cx="13" cy="25" r="1.1" fill="var(--pr)" opacity="0.85"/>
+        <circle cx="11" cy="30" r="1.3" fill="var(--pr)"/>
+        <circle cx="14" cy="35" r="1.1" fill="var(--pr)" opacity="0.7"/>
+        <!-- Right helix strand -->
+        <circle cx="26" cy="5" r="1.1" fill="var(--pr)" opacity="0.7"/>
+        <circle cx="29" cy="10" r="1.3" fill="var(--pr)"/>
+        <circle cx="27" cy="15" r="1.1" fill="var(--pr)" opacity="0.85"/>
+        <circle cx="23" cy="20" r="1.0" fill="var(--pr)" opacity="0.7"/>
+        <circle cx="27" cy="25" r="1.1" fill="var(--pr)" opacity="0.85"/>
+        <circle cx="29" cy="30" r="1.3" fill="var(--pr)"/>
+        <circle cx="26" cy="35" r="1.1" fill="var(--pr)" opacity="0.7"/>
+        <!-- Constellation lines -->
+        <path d="M14,5 L11,10 L13,15 L17,20 L13,25 L11,30 L14,35" stroke="var(--pr)" stroke-width="0.5" opacity="0.4" stroke-linecap="round" fill="none"/>
+        <path d="M26,5 L29,10 L27,15 L23,20 L27,25 L29,30 L26,35" stroke="var(--pr)" stroke-width="0.5" opacity="0.4" stroke-linecap="round" fill="none"/>
+        <!-- Cross-rungs (base pairs) -->
+        <line x1="11" y1="10" x2="29" y2="10" stroke="var(--pr)" stroke-width="0.4" opacity="0.3"/>
+        <line x1="13" y1="15" x2="27" y2="15" stroke="var(--pr)" stroke-width="0.4" opacity="0.3"/>
+        <line x1="17" y1="20" x2="23" y2="20" stroke="var(--pr)" stroke-width="0.4" opacity="0.3"/>
+        <line x1="13" y1="25" x2="27" y2="25" stroke="var(--pr)" stroke-width="0.4" opacity="0.3"/>
+        <line x1="11" y1="30" x2="29" y2="30" stroke="var(--pr)" stroke-width="0.4" opacity="0.3"/>
+        <!-- Gold north star at center -->
+        <path d="M20,14.5 L20.9,18.2 L20,17 L19.1,18.2 Z" fill="#e8b84b"/>
+        <path d="M20,25.5 L20.9,21.8 L20,23 L19.1,21.8 Z" fill="#e8b84b"/>
+        <path d="M14.5,20 L18.2,19.1 L17,20 L18.2,20.9 Z" fill="#e8b84b"/>
+        <path d="M25.5,20 L21.8,20.9 L23,20 L21.8,19.1 Z" fill="#e8b84b"/>
+        <circle cx="20" cy="20" r="1.5" fill="#e8b84b"/>
+        <circle cx="20" cy="20" r="2.5" fill="#e8b84b" opacity="0.2"/>
+        <!-- Tiny background stars -->
+        <circle cx="6" cy="7" r="0.4" fill="currentColor" opacity="0.3"/>
+        <circle cx="34" cy="8" r="0.3" fill="currentColor" opacity="0.25"/>
+        <circle cx="5" cy="33" r="0.35" fill="currentColor" opacity="0.2"/>
+        <circle cx="35" cy="34" r="0.4" fill="currentColor" opacity="0.3"/>
       </svg>
-      <span>GeneGaze</span><span class="logo-star">&thinsp;&#10022;</span>
+      <span>GeneGaze</span>
     </a>
     <div class="nav-r">
       <button class="tbtn" data-theme-toggle aria-label="Switch to light mode">
