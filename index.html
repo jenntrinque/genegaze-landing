@@ -128,7 +128,7 @@
 
     .preview{background:linear-gradient(to bottom,var(--surf) 0%,var(--bg) 40%,var(--surf) 100%);position:relative;z-index:1}
     .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp16);align-items:center}
-    .pphone{max-width:300px;margin-inline:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,.55)) drop-shadow(0 0 44px var(--pg));overflow:hidden}
+    .pphone{max-width:300px;margin-inline:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,.55)) drop-shadow(0 0 44px var(--pg))}
     .steps{list-style:none;display:flex;flex-direction:column;gap:var(--sp6);margin-top:var(--sp8)}
     .step{display:flex;gap:var(--sp4);align-items:flex-start}
     .snum{flex-shrink:0;width:32px;height:32px;border-radius:var(--r-full);background:var(--pg);border:1px solid var(--pr);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;color:var(--pr)}
@@ -186,9 +186,9 @@
     /* ── Mobile optimizations ─────────────────────── */
     @media(max-width:768px){
       .wgrid{grid-template-columns:1fr;gap:var(--sp8)}
-      .pgrid{grid-template-columns:1fr}
+      .pgrid{grid-template-columns:1fr}.pgrid>.fi:first-child{order:2}.pgrid>.fi:last-child{order:1}
       .wimg{max-width:280px;margin-inline:auto}
-      .pphone{max-width:220px;max-height:480px}
+      .pphone{max-width:240px}
       .pgrid{direction:ltr;gap:var(--sp6)}
       .pgrid>*:first-child{order:2}
       .pgrid>*:last-child{order:1;display:flex;justify-content:center}
@@ -602,7 +602,7 @@
 
   <div class="igbar" role="complementary" aria-label="Instagram">
     <div class="wrap iginner">
-      <p>Follow the launch story</p>
+      <p>GeneGaze your genes on Instagram</p>
       <a href="https://instagram.com/GeneGaze" class="iglink" target="_blank" rel="noopener noreferrer" aria-label="Follow @GeneGaze on Instagram">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
         GeneGaze
