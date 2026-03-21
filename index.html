@@ -65,6 +65,7 @@
     @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
     .sec{position:relative;z-index:1;padding-block:clamp(var(--sp12),8vw,var(--sp24))}
+    .sec,.what,.features,.preview,.privacy-section,.price-section,.wlist{transition:opacity .6s ease,transform .6s ease}
     .slbl{font-size:var(--text-xs);font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--pr);margin-bottom:var(--sp3)}
     .sh2{font-size:var(--text-2xl);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp4)}
     .sbody{font-size:var(--text-base);color:var(--mu);max-width:56ch;line-height:1.72}
@@ -187,12 +188,10 @@
     /* ── Mobile optimizations ─────────────────────── */
     @media(max-width:768px){
       .wgrid{grid-template-columns:1fr;gap:var(--sp8)}
-      .pgrid{grid-template-columns:1fr}.pgrid>.fi:first-child{order:2}.pgrid>.fi:last-child{order:1}
+      .pgrid{grid-template-columns:1fr;gap:var(--sp8)}
       .wimg{max-width:280px;margin-inline:auto}
       .pphone{max-width:240px}
-      .pgrid{direction:ltr;gap:var(--sp6)}
-      .pgrid>*:first-child{order:2}
-      .pgrid>*:last-child{order:1;display:flex;justify-content:center}
+      .pgrid>*:first-child{order:2}.pgrid>*:last-child{order:1}
       .sec{padding-block:var(--sp12)}
       .fintro,.analyze-intro{margin-bottom:var(--sp8)}
       .sh2{font-size:var(--text-xl)}
@@ -642,6 +641,28 @@
         return match?match[2]:null;
       }
     })();
+  
+    // Scroll reveal animations
+    (function(){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.sec,.what,.features,.preview,.privacy-section,.price-section,.wlist').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        observer.observe(el);
+      });
+      // Don't hide the hero
+      const hero = document.querySelector('.hero');
+      if (hero) { hero.style.opacity = '1'; hero.style.transform = 'none'; }
+    })();
+
   </script>
 </body>
 </html>
