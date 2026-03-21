@@ -93,7 +93,8 @@
         flex-direction:row;
         overflow-x:auto;
         gap:var(--sp3);
-        padding-bottom:var(--sp3);
+        padding:var(--sp4) var(--sp6) var(--sp4);
+        margin-inline:calc(-1 * var(--sp6));
         scroll-snap-type:x mandatory;
         -webkit-overflow-scrolling:touch;
         /* hide scrollbar visually but keep it functional */
@@ -104,6 +105,8 @@
         flex:0 0 220px;
         scroll-snap-align:start;
       }
+      .analyze-card:first-child{margin-left:var(--sp2)}
+      .analyze-card:last-child{margin-right:var(--sp2)}
     }
 
     .analyze-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp5);transition:box-shadow var(--t),transform var(--t);position:relative;z-index:1}
@@ -125,7 +128,7 @@
 
     .preview{background:linear-gradient(to bottom,var(--surf) 0%,var(--bg) 40%,var(--surf) 100%);position:relative;z-index:1}
     .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp16);align-items:center}
-    .pphone{max-width:300px;margin-inline:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,.55)) drop-shadow(0 0 44px var(--pg))}
+    .pphone{max-width:300px;margin-inline:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,.55)) drop-shadow(0 0 44px var(--pg));overflow:hidden}
     .steps{list-style:none;display:flex;flex-direction:column;gap:var(--sp6);margin-top:var(--sp8)}
     .step{display:flex;gap:var(--sp4);align-items:flex-start}
     .snum{flex-shrink:0;width:32px;height:32px;border-radius:var(--r-full);background:var(--pg);border:1px solid var(--pr);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;color:var(--pr)}
@@ -182,12 +185,13 @@
 
     /* ── Mobile optimizations ─────────────────────── */
     @media(max-width:768px){
-      .wgrid,.pgrid{grid-template-columns:1fr;gap:var(--sp8)}
+      .wgrid{grid-template-columns:1fr;gap:var(--sp8)}
+      .pgrid{grid-template-columns:1fr}
       .wimg{max-width:280px;margin-inline:auto}
-      .pphone{max-width:220px}
-      .pgrid{direction:ltr}
+      .pphone{max-width:220px;max-height:480px}
+      .pgrid{direction:ltr;gap:var(--sp6)}
       .pgrid>*:first-child{order:2}
-      .pgrid>*:last-child{order:1}
+      .pgrid>*:last-child{order:1;display:flex;justify-content:center}
       .sec{padding-block:var(--sp12)}
       .fintro,.analyze-intro{margin-bottom:var(--sp8)}
       .sh2{font-size:var(--text-xl)}
@@ -201,7 +205,7 @@
       .fc h3{font-size:var(--text-sm)}
       .fc p{font-size:var(--text-xs);line-height:1.55}
       .ficon{font-size:1.4rem;margin-bottom:var(--sp2)}
-      .analyze-grid{padding-inline:var(--sp4)}
+      /* analyze-grid padding handled in mobile scroll strip above */
       .privacy-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:480px){
@@ -412,22 +416,22 @@
         <p class="sbody" style="max-width:540px;margin-inline:auto">GeneGaze cross-references every variant against six globally recognized clinical databases — enriched with disease phenotypes, gene function summaries, population frequencies across diverse ancestries, and peer-reviewed literature from Wiley journals.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(160px,100%),1fr));gap:var(--sp3);max-width:720px;margin:0 auto" role="list">
-        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bd);text-decoration:none;color:var(--fg);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#059669">✓</span> ClinVar
         </a>
-        <a href="https://www.pharmgkb.org/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bd);text-decoration:none;color:var(--fg);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
+        <a href="https://www.pharmgkb.org/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#2563eb">✓</span> PharmGKB
         </a>
-        <a href="https://www.ebi.ac.uk/gwas/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bd);text-decoration:none;color:var(--fg);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
+        <a href="https://www.ebi.ac.uk/gwas/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#7c3aed">✓</span> GWAS Catalog
         </a>
-        <a href="https://www.omim.org/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bd);text-decoration:none;color:var(--fg);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
+        <a href="https://www.omim.org/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#ea580c">✓</span> OMIM
         </a>
-        <a href="https://gnomad.broadinstitute.org/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bd);text-decoration:none;color:var(--fg);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
+        <a href="https://gnomad.broadinstitute.org/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#0d9488">✓</span> gnomAD
         </a>
-        <a href="https://icd.who.int/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bd);text-decoration:none;color:var(--fg);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
+        <a href="https://icd.who.int/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#dc2626">✓</span> ICD-10/ICD-11
         </a>
       </div>
