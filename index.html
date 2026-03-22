@@ -87,6 +87,7 @@
 
     /* Desktop: 3-column grid */
     .analyze-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+    .analyze-grid .analyze-card:last-child{grid-column:2}
 
     /* Mobile: horizontal scroll strip */
     @media(max-width:768px){
@@ -149,7 +150,7 @@
 
     /* ── Privacy section ─── */
     .privacy-section{background:var(--surf);position:relative;z-index:1}
-    .privacy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:var(--sp4)}
+    .privacy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp4)}
     .priv-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp6)}
     .priv-icon{font-size:1.5rem;margin-bottom:var(--sp3);display:block}
     .priv-card h3{font-family:var(--fd);font-size:var(--text-base);font-weight:700;margin-bottom:var(--sp2)}
@@ -171,7 +172,7 @@
     .iginner{display:flex;align-items:center;justify-content:center;gap:var(--sp4);flex-wrap:wrap}
     .iginner p{font-size:var(--text-base);color:var(--mu)}
     .iglink{display:inline-flex;align-items:center;gap:var(--sp2);padding:var(--sp2) var(--sp5);border:1px solid var(--bdr);border-radius:var(--r-full);font-size:var(--text-sm);font-weight:600}
-    .iglink:hover{border-color:#e1306c;color:#e1306c;background:rgba(225,48,108,.07)}
+    .iglink:hover{border-color:#d4a017;color:#c8960e;background:rgba(212,160,23,.07)}
 
     footer{border-top:1px solid var(--div);padding-block:var(--sp8);z-index:1;position:relative}
     .finner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:var(--sp3) var(--sp6);text-align:center}
@@ -369,7 +370,7 @@
         <h2 class="sh2">Every variant validated<br>against trusted databases.</h2>
         <p class="sbody" style="max-width:540px;margin-inline:auto">GeneGaze cross-references every variant against six globally recognized clinical databases — enriched with disease phenotypes, gene function summaries, population frequencies across diverse ancestries, and peer-reviewed literature from Wiley journals.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(160px,100%),1fr));gap:var(--sp3);max-width:720px;margin:0 auto" role="list">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3);max-width:720px;margin:0 auto" role="list">
         <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank" rel="noopener noreferrer" class="fi" style="display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1rem;border-radius:0.75rem;background:var(--bg);border:1px solid var(--bdr);text-decoration:none;color:var(--tx);font-size:var(--text-sm);font-weight:600;transition:border-color .2s" role="listitem">
           <span style="color:#059669">✓</span> ClinVar
         </a>
