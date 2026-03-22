@@ -87,7 +87,7 @@
 
     /* Desktop: 3-column grid */
     .analyze-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
-    .analyze-grid .analyze-card:last-child{grid-column:2}
+    .analyze-grid .analyze-card:last-child{grid-column:1 / -1;max-width:520px;margin-inline:auto;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(20,184,166,.04));border-color:rgba(6,182,212,.25)}
 
     /* Mobile: horizontal scroll strip */
     @media(max-width:768px){
@@ -109,7 +109,7 @@
         scroll-snap-align:start;
       }
       .analyze-card:first-child{margin-left:var(--sp2)}
-      .analyze-card:last-child{margin-right:var(--sp2)}
+      .analyze-card:last-child{margin-right:var(--sp2);flex:0 0 280px;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(20,184,166,.04));border-color:rgba(6,182,212,.25)}
     }
 
     .analyze-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp5);transition:box-shadow var(--t),transform var(--t);position:relative;z-index:1}
@@ -352,10 +352,10 @@
           <p>Fertility, pregnancy risks, and sex-linked conditions</p>
         </article>
 
-        <article class="analyze-card fi" role="listitem">
+        <article class="analyze-card fi" role="listitem" style="text-align:center">
           <span class="analyze-emoji" aria-hidden="true">✨</span>
           <h3>Physical Traits</h3>
-          <p>Hair, eye color, body composition, taste, and sensory predictions</p>
+          <p>Hair, eye color, body composition, taste, and sensory predictions — the fun one</p>
         </article>
 
       </div>
