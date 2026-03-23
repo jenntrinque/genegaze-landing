@@ -69,7 +69,7 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
     .wrap{max-width:var(--w);margin-inline:auto;padding-inline:var(--sp6)}
 
-    #stars{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.5}
+    #stars{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.6}
     [data-theme="light"] #stars{opacity:.10}
 
     nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--sp4) var(--sp6);display:flex;align-items:center;justify-content:space-between;background:color-mix(in oklch,var(--bg) 80%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--div)}
@@ -111,7 +111,7 @@
     .sh2{font-size:var(--text-2xl);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp4)}
     .sbody{font-size:var(--text-base);color:var(--mu);max-width:56ch;line-height:1.72}
 
-    .what{background:linear-gradient(to bottom,var(--bg),var(--surf));position:relative;z-index:1}
+    .what{background:linear-gradient(to bottom,transparent 0%,var(--surf) 12%,var(--surf) 88%,transparent 100%);position:relative;z-index:1}
     /* Theme-responsive screenshots: swap light/dark images based on landing page theme */
     .screen-dark{display:block}
     .screen-light{display:none}
@@ -122,7 +122,7 @@
     .wimg img{width:100%;height:100%;object-fit:cover}
 
     /* ── What We Analyze section ─── */
-    .analyze{background:var(--surf);position:relative;z-index:1}
+    .analyze{background:linear-gradient(to bottom,transparent 0%,var(--surf) 8%,var(--surf) 92%,transparent 100%);position:relative;z-index:1}
     .analyze-intro{text-align:center;margin-bottom:var(--sp10)}
     .analyze-intro .sbody{margin-inline:auto}
 
@@ -193,7 +193,7 @@
     .analyze-card p{font-size:var(--text-xs);color:var(--mu);line-height:1.6}
 
     /* ── Feature cards (features section) ─── */
-    .features{background:var(--bg);position:relative;z-index:1}
+    .features{background:linear-gradient(to bottom,transparent 0%,var(--bg) 8%,var(--bg) 92%,transparent 100%);position:relative;z-index:1}
     .fintro{text-align:center;margin-bottom:var(--sp12)}
     .fintro .sbody{margin-inline:auto}
     .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:var(--sp4)}
@@ -203,7 +203,7 @@
     .fc h3{font-family:var(--fd);font-size:var(--text-base);font-weight:700;margin-bottom:var(--sp2)}
     .fc p{font-size:var(--text-sm);color:var(--mu);line-height:1.65}
 
-    .preview{background:linear-gradient(to bottom,var(--surf) 0%,var(--bg) 40%,var(--surf) 100%);position:relative;z-index:1}
+    .preview{background:linear-gradient(to bottom,transparent 0%,var(--bg) 10%,var(--bg) 90%,transparent 100%);position:relative;z-index:1}
     .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp16);align-items:center}
     .pphone{max-width:300px;margin-inline:auto;filter:drop-shadow(0 24px 60px rgba(0,0,0,.55)) drop-shadow(0 0 44px var(--pg))}
     .steps{list-style:none;display:flex;flex-direction:column;gap:var(--sp6);margin-top:var(--sp8)}
@@ -213,7 +213,7 @@
     .stxt span{font-size:var(--text-sm);color:var(--mu)}
 
     /* ── Pricing section ─── */
-    .pricing{background:var(--bg);position:relative;z-index:1}
+    .pricing{background:linear-gradient(to bottom,transparent 0%,var(--bg) 8%,var(--bg) 92%,transparent 100%);position:relative;z-index:1}
     .price-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-2xl);padding:clamp(var(--sp10),6vw,var(--sp16));max-width:560px;margin-inline:auto;box-shadow:var(--sh),var(--gl);text-align:center}
     .price-tag{font-family:var(--fd);font-size:clamp(3rem,8vw,5rem);font-weight:700;letter-spacing:-.04em;color:var(--pr);line-height:1;margin-bottom:var(--sp2)}
     .price-sub{font-size:var(--text-sm);color:var(--mu);margin-bottom:var(--sp8)}
@@ -223,14 +223,14 @@
     .price-note{font-size:var(--text-xs);color:var(--fa);margin-top:var(--sp4)}
 
     /* ── Privacy section ─── */
-    .privacy-section{background:var(--surf);position:relative;z-index:1}
+    .privacy-section{background:linear-gradient(to bottom,transparent 0%,var(--surf) 8%,var(--surf) 92%,transparent 100%);position:relative;z-index:1}
     .privacy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp4)}
     .priv-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp6)}
     .priv-icon{font-size:1.5rem;margin-bottom:var(--sp3);display:block}
     .priv-card h3{font-family:var(--fd);font-size:var(--text-base);font-weight:700;margin-bottom:var(--sp2)}
     .priv-card p{font-size:var(--text-sm);color:var(--mu);line-height:1.65}
 
-    .wlist{background:var(--bg);text-align:center;position:relative;z-index:1}
+    .wlist{background:linear-gradient(to bottom,transparent 0%,var(--bg) 10%,var(--bg) 90%,transparent 100%);text-align:center;position:relative;z-index:1}
     .wcard{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-2xl);padding:clamp(var(--sp10),6vw,var(--sp20));max-width:620px;margin-inline:auto;box-shadow:var(--sh),var(--gl);position:relative;z-index:1}
     .wcard h2{font-size:var(--text-2xl);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp4)}
     .wsub{font-size:var(--text-base);color:var(--mu);margin-bottom:var(--sp8);max-width:44ch;margin-inline:auto}
@@ -242,7 +242,7 @@
     .wconf.show{display:flex}
     .wprivacy{font-size:var(--text-xs);color:var(--fa);margin-top:var(--sp4)}
 
-    .igbar{background:var(--surf);padding-block:var(--sp10);text-align:center;z-index:1;position:relative}
+    .igbar{background:linear-gradient(to bottom,transparent 0%,var(--surf) 15%,var(--surf) 100%);padding-block:var(--sp10);text-align:center;z-index:1;position:relative}
     .iginner{display:flex;align-items:center;justify-content:center;gap:var(--sp4);flex-wrap:wrap}
     .iginner p{font-size:var(--text-base);color:var(--mu)}
     .iglink{display:inline-flex;align-items:center;gap:var(--sp2);padding:var(--sp2) var(--sp5);border:1px solid var(--bdr);border-radius:var(--r-full);font-size:var(--text-sm);font-weight:600}
@@ -435,7 +435,7 @@
   </section>
 
   <!-- Clinically Backed Sources -->
-  <section class="sec" id="sources" style="padding-block:var(--sp6);background:var(--surf)">
+  <section class="sec" id="sources" style="padding-block:var(--sp6);background:linear-gradient(to bottom,transparent 0%,var(--surf) 12%,var(--surf) 88%,transparent 100%)">
     <div class="wrap">
       <div class="fi" style="text-align:center;margin-bottom:var(--sp5)">
         <p class="slbl">Clinically Backed</p>
