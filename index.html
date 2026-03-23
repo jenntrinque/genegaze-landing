@@ -170,7 +170,7 @@
         align-items:center;
         justify-content:center;
         gap:0.35rem;
-        margin-top:var(--sp3);
+        margin-bottom:var(--sp3);
         font-size:var(--text-xs);
         color:var(--mu);
         opacity:.7;
@@ -371,6 +371,10 @@
         <p class="sbody">GeneGaze screens for all clinically significant variants possible — organized into ten mega-groups covering every major system in your body.</p>
       </div>
       <div class="analyze-scroll-wrap">
+      <div class="analyze-scroll-hint" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Swipe to explore all categories
+      </div>
       <div class="analyze-grid" role="list">
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🛡️</span>
@@ -417,10 +421,6 @@
           <h3>Reproductive Health</h3>
           <p>Fertility, pregnancy risks, and sex-linked conditions</p>
         </article>
-      </div>
-      <div class="analyze-scroll-hint" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Swipe to explore all categories
       </div>
       </div>
       <!-- Physical Traits — always separate, full-width below the grid -->
@@ -650,7 +650,7 @@
 
   <script>
     (function(){const c=document.getElementById('stars'),x=c.getContext('2d');let s=[];function resize(){c.width=window.innerWidth;c.height=document.body.scrollHeight||window.innerHeight*4;s=[];for(let i=0;i<260;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+.3,a:Math.random()*6.28,sp:Math.random()*.001+.0003});}function draw(){x.clearRect(0,0,c.width,c.height);s.forEach(p=>{p.a+=p.sp;const al=.25+Math.abs(Math.sin(p.a))*.75;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle=`rgba(255,255,255,${al})`;x.fill();});requestAnimationFrame(draw);}window.addEventListener('resize',resize);resize();draw();})();
-    (function(){const w=document.querySelector('.analyze-scroll-wrap'),g=document.querySelector('.analyze-grid'),h=document.querySelector('.analyze-scroll-hint');if(g&&w){g.addEventListener('scroll',function(){var atEnd=g.scrollLeft+g.clientWidth>=g.scrollWidth-8;if(atEnd)w.classList.add('scrolled-end');else w.classList.remove('scrolled-end');if(h&&g.scrollLeft>10){h.style.opacity='0';h.style.transition='opacity .4s';setTimeout(function(){h.style.display='none'},400);}},{passive:true});}})();
+    (function(){const w=document.querySelector('.analyze-scroll-wrap'),g=document.querySelector('.analyze-grid');if(g&&w){g.addEventListener('scroll',function(){var atEnd=g.scrollLeft+g.clientWidth>=g.scrollWidth-8;if(atEnd)w.classList.add('scrolled-end');else w.classList.remove('scrolled-end');},{passive:true});}})();
     (function(){const btn=document.querySelector('[data-theme-toggle]'),root=document.documentElement;let t='dark';function set(v){t=v;root.setAttribute('data-theme',v);if(btn){btn.setAttribute('aria-label','Switch to '+(v==='dark'?'light':'dark')+' mode');btn.innerHTML=v==='dark'?'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}}if(btn)btn.addEventListener('click',()=>set(t==='dark'?'light':'dark'));set('dark');})();
     (function(){
       const f=document.getElementById('wl-form'),c=document.getElementById('wl-conf'),b=document.getElementById('wl-btn');
