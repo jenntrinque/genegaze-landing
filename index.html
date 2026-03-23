@@ -126,31 +126,29 @@
     .analyze-intro{text-align:center;margin-bottom:var(--sp10)}
     .analyze-intro .sbody{margin-inline:auto}
 
-    /* Desktop: 3-column grid */
+    /* Desktop: 3x3 grid for 9 health categories */
     .analyze-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
-    .analyze-grid .analyze-card:last-child{grid-column:1 / -1;max-width:520px;margin-inline:auto;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(20,184,166,.04));border-color:rgba(6,182,212,.25)}
 
-    /* Mobile: horizontal scroll strip */
+    /* Physical Traits standalone card */
+    .physical-traits-card .analyze-card{max-width:520px;margin-inline:auto}
+
+    /* Mobile: horizontal scroll for health categories */
     @media(max-width:768px){
       .analyze-grid{
         display:flex;
-        flex-direction:row;
         overflow-x:auto;
         gap:var(--sp3);
-        padding:var(--sp4) var(--sp6) var(--sp4);
-        margin-inline:calc(-1 * var(--sp6));
+        padding:var(--sp2);
         scroll-snap-type:x mandatory;
         -webkit-overflow-scrolling:touch;
-        /* hide scrollbar visually but keep it functional */
         scrollbar-width:none;
       }
       .analyze-grid::-webkit-scrollbar{display:none}
-      .analyze-card{
+      .analyze-grid .analyze-card{
         flex:0 0 220px;
         scroll-snap-align:start;
       }
-      .analyze-card:first-child{margin-left:var(--sp2)}
-      .analyze-card:last-child{margin-right:var(--sp2);flex:0 0 280px;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(20,184,166,.04));border-color:rgba(6,182,212,.25)}
+      .physical-traits-card .analyze-card{max-width:100%}
     }
 
     .analyze-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp5);transition:box-shadow var(--t),transform var(--t);position:relative;z-index:1}
@@ -338,67 +336,59 @@
         <p class="sbody">GeneGaze screens for all clinically significant variants possible — organized into ten mega-groups covering every major system in your body.</p>
       </div>
       <div class="analyze-grid" role="list">
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🛡️</span>
           <h3>Immune &amp; Inflammation</h3>
           <p>Autoimmune conditions, inflammation pathways, and immune response markers</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🔬</span>
           <h3>Cancer</h3>
           <p>Hereditary cancer susceptibility genes and tumor markers</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">❤️</span>
           <h3>Heart &amp; Blood</h3>
           <p>Cardiovascular health, blood disorders, and clotting factors</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🦴</span>
           <h3>Body Structure</h3>
           <p>Connective tissue conditions, skeletal health, and aging markers</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🧪</span>
           <h3>Rare Conditions</h3>
           <p>Rare genetic diseases and uncommon variant screening</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">💊</span>
           <h3>Medications</h3>
           <p>Pharmacogenomic drug response and enzyme metabolism</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">⚡</span>
           <h3>Metabolism</h3>
           <p>Metabolic pathways, nutrient processing, and energy</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🧠</span>
           <h3>Brain &amp; Mind</h3>
           <p>Neurological conditions, mental health markers, and cognition</p>
         </article>
-
         <article class="analyze-card fi" role="listitem">
           <span class="analyze-emoji" aria-hidden="true">🧬</span>
           <h3>Reproductive Health</h3>
           <p>Fertility, pregnancy risks, and sex-linked conditions</p>
         </article>
-
-        <article class="analyze-card fi" role="listitem" style="text-align:center">
+      </div>
+      <!-- Physical Traits — always separate, full-width below the grid -->
+      <div class="physical-traits-card fi" style="margin-top:var(--sp3)">
+        <article class="analyze-card" style="text-align:center;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(20,184,166,.04));border-color:rgba(6,182,212,.25)">
           <span class="analyze-emoji" aria-hidden="true">✨</span>
           <h3>Physical Traits</h3>
           <p>Hair, eye color, body composition, taste, and sensory predictions — the fun one</p>
         </article>
-
       </div>
     </div>
   </section>
