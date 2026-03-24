@@ -84,7 +84,7 @@
     @supports(min-height:100svh){.hero{min-height:100svh}}
     .hbg{position:absolute;inset:-1px 0 0 0;background-image:url('https://user-gen-media-assets.s3.amazonaws.com/gemini_images/ff649c61-5642-4770-be4f-285e6f4366ae.png');background-size:cover;background-position:center top;z-index:-1;opacity:.42;will-change:auto}
     [data-theme="light"] .hbg{opacity:.18}
-    .hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,var(--bg) 100%)}
+    .hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--bg) 85%,var(--surf) 100%)}
     .badge{display:inline-flex;align-items:center;gap:var(--sp2);padding:var(--sp1) var(--sp3) var(--sp1) var(--sp2);border-radius:var(--r-full);border:1px solid var(--gd);background:var(--gg);font-size:var(--text-xs);font-weight:700;color:var(--gd);letter-spacing:.07em;text-transform:uppercase;margin-bottom:var(--sp6);animation:float 6s ease-in-out infinite}
     .bdot{width:6px;height:6px;border-radius:50%;background:var(--gd);animation:pdot 2s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
@@ -112,7 +112,7 @@
     .sh2{font-size:var(--text-2xl);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp4)}
     .sbody{font-size:var(--text-base);color:var(--mu);max-width:56ch;line-height:1.72}
 
-    .what{background:linear-gradient(to bottom,transparent 0%,var(--surf) 12%,var(--surf) 88%,transparent 100%);position:relative;z-index:1}
+    .what{background:linear-gradient(to bottom,var(--bg) 0%,var(--surf) 8%,var(--surf) 92%,transparent 100%);position:relative;z-index:1}
     /* Theme-responsive screenshots: swap light/dark images based on landing page theme */
     .screen-dark{display:block}
     .screen-light{display:none}
