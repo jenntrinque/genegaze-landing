@@ -56,8 +56,8 @@
     [data-theme="dark"],:root{--bg:#0b0c12;--surf:#10111a;--card:#161829;--div:rgba(255,255,255,.07);--bdr:rgba(255,255,255,.10);--tx:#e8e9f0;--mu:#8e90a8;--fa:#4a4c62;--pr:#4fc3ce;--pv:#8b5cf6;--pg:rgba(79,195,206,.18);--gd:#d4a847;--gg:rgba(212,168,71,.15);--sh:0 12px 40px rgba(0,0,0,.6);--gl:0 0 48px rgba(79,195,206,.12);--hover-glow:0 0 0 1px rgba(79,195,206,.15),0 0 28px rgba(79,195,206,.18),0 0 52px rgba(139,92,246,.10)}
     [data-theme="light"]{--bg:#f4f3f0;--surf:#f9f8f5;--card:#fff;--div:rgba(0,0,0,.07);--bdr:rgba(0,0,0,.10);--tx:#1a1c2e;--mu:#6b6d85;--fa:#a9abbe;--pr:#0d7a85;--pv:#7c3aed;--pg:rgba(13,122,133,.12);--gd:#a07820;--gg:rgba(160,120,32,.10);--sh:0 12px 40px rgba(0,0,0,.14);--gl:0 0 40px rgba(13,122,133,.08);--hover-glow:0 0 0 1px rgba(180,120,0,.18),0 0 24px rgba(200,140,0,.22),0 0 44px rgba(200,120,0,.12)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:5rem}
-    body{min-height:100dvh;font-family:var(--fb);font-size:var(--text-base);color:var(--tx);background:var(--bg);overflow-x:hidden}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:5rem;overscroll-behavior:none}
+    body{min-height:100dvh;font-family:var(--fb);font-size:var(--text-base);color:var(--tx);background:var(--bg);overflow-x:hidden;overscroll-behavior:none}
     img{display:block;max-width:100%;height:auto}
     h1,h2,h3{font-family:var(--fd);text-wrap:balance;line-height:1.12}
     p,li{text-wrap:pretty}
@@ -251,7 +251,7 @@
     .iglink{display:inline-flex;align-items:center;gap:var(--sp2);padding:var(--sp2) var(--sp5);border:1px solid var(--bdr);border-radius:var(--r-full);font-size:var(--text-sm);font-weight:600}
     .iglink:hover{border-color:#d4a017;color:#c8960e;background:rgba(212,160,23,.07)}
 
-    footer{border-top:1px solid var(--div);padding-block:var(--sp8);z-index:1;position:relative;background:var(--card)}
+    footer{border-top:1px solid var(--div);padding-block:var(--sp8);z-index:1;position:relative;background:var(--card);padding-bottom:calc(var(--sp8) + env(safe-area-inset-bottom, 0px))}
     .finner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:var(--sp3) var(--sp6);text-align:center}
     .fcopy{font-size:var(--text-xs);color:var(--mu);width:100%}
 
