@@ -197,7 +197,9 @@
     .features{background:linear-gradient(to bottom,transparent 0%,var(--bg) 8%,var(--bg) 92%,transparent 100%);position:relative;z-index:1}
     .fintro{text-align:center;margin-bottom:var(--sp12)}
     .fintro .sbody{margin-inline:auto}
-    .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:var(--sp4)}
+    .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4)}
+    @media(max-width:960px) and (min-width:521px){.fgrid{grid-template-columns:repeat(2,1fr)}.fgrid>.fc:last-child:nth-child(2n+1){grid-column:1/span 2;max-width:50%;justify-self:center}}
+    @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
     .fc{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp6);transition:box-shadow var(--t),transform var(--t);position:relative;z-index:1}
     .fc:hover{box-shadow:var(--hover-glow);transform:translateY(-2px)}
     .ficon{font-size:1.75rem;margin-bottom:var(--sp3);display:block;line-height:1}
