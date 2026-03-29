@@ -106,6 +106,40 @@
     .shint{position:absolute;bottom:var(--sp8);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--sp2);color:var(--fa);font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;animation:bob 2.5s ease-in-out infinite}
     @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
+    /* ── Privacy hero badge ─── */
+    .priv-hero-badge{display:inline-flex;align-items:center;gap:var(--sp3);padding:var(--sp3) var(--sp5);border-radius:var(--r-xl);border:1px solid rgba(79,195,206,.30);background:rgba(79,195,206,.08);margin-bottom:var(--sp8);position:relative;z-index:2;max-width:560px;text-align:left;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .priv-hero-badge svg{flex-shrink:0;color:var(--pr)}
+    .priv-hero-badge-text{display:flex;flex-direction:column;gap:var(--sp1)}
+    .priv-hero-badge-title{font-size:var(--text-sm);font-weight:700;color:var(--pr);letter-spacing:.01em}
+    .priv-hero-badge-body{font-size:var(--text-xs);color:var(--mu);line-height:1.55}
+    .priv-competitive{display:inline-block;font-size:var(--text-xs);color:var(--fa);font-style:italic;margin-top:var(--sp2);position:relative;z-index:2;max-width:52ch;line-height:1.55}
+
+    /* ── Clinical validation block (in features) ─── */
+    .clinical-bar{background:linear-gradient(135deg,rgba(79,195,206,.07),rgba(139,92,246,.05));border:1px solid rgba(79,195,206,.18);border-radius:var(--r-lg);padding:var(--sp6);margin-top:var(--sp8)}
+    .clinical-bar h3{font-family:var(--fd);font-size:var(--text-base);font-weight:700;margin-bottom:var(--sp3);color:var(--tx)}
+    .clinical-bar p{font-size:var(--text-sm);color:var(--mu);line-height:1.65;margin-bottom:var(--sp3)}
+    .db-pills{display:flex;flex-wrap:wrap;gap:var(--sp2)}
+    .db-pill{display:inline-block;padding:var(--sp1) var(--sp3);border-radius:var(--r-full);border:1px solid rgba(79,195,206,.20);background:rgba(79,195,206,.07);font-size:var(--text-xs);font-weight:600;color:var(--pr);letter-spacing:.04em}
+
+    /* ── FAQ / Important Information section ─── */
+    .info-section{background:linear-gradient(to bottom,transparent 0%,var(--surf) 8%,var(--surf) 92%,transparent 100%);position:relative;z-index:1}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+    @media(max-width:640px){.info-grid{grid-template-columns:1fr}}
+    .info-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:var(--sp6)}
+    .info-card.warn{border-color:rgba(212,168,71,.25);background:linear-gradient(135deg,rgba(212,168,71,.05),transparent)}
+    .info-icon{font-size:1.4rem;margin-bottom:var(--sp3);display:block}
+    .info-card h3{font-family:var(--fd);font-size:var(--text-base);font-weight:700;margin-bottom:var(--sp3)}
+    .info-card p{font-size:var(--text-sm);color:var(--mu);line-height:1.7}
+    .info-card a{color:var(--pr);text-decoration:underline;text-underline-offset:3px}
+    .info-card a:hover{opacity:.8}
+
+    /* ── Educational disclaimer banner ─── */
+    .edu-disclaimer{background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(79,195,206,.04));border-top:1px solid rgba(139,92,246,.15);border-bottom:1px solid rgba(139,92,246,.15);padding-block:var(--sp8);position:relative;z-index:1}
+    .edu-disclaimer-inner{max-width:var(--w);margin-inline:auto;padding-inline:var(--sp6);display:flex;gap:var(--sp5);align-items:flex-start}
+    .edu-disclaimer-icon{flex-shrink:0;width:40px;height:40px;border-radius:var(--r-full);background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);display:flex;align-items:center;justify-content:center;color:var(--pv);margin-top:.1em}
+    .edu-disclaimer-text h3{font-family:var(--fd);font-size:var(--text-base);font-weight:700;margin-bottom:var(--sp2)}
+    .edu-disclaimer-text p{font-size:var(--text-sm);color:var(--mu);line-height:1.7}
+
     .sec{position:relative;z-index:1;padding-block:clamp(var(--sp12),8vw,var(--sp24))}
     .sec,.what,.features,.preview,.privacy-section,.price-section,.wlist{transition:opacity .6s ease,transform .6s ease}
     .slbl{font-size:var(--text-xs);font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--pr);margin-bottom:var(--sp3)}
@@ -342,6 +376,14 @@
         <span class="hstat-l">One-Time Purchase</span>
       </div>
     </div>
+    <div class="priv-hero-badge" role="note" aria-label="Privacy guarantee">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      <div class="priv-hero-badge-text">
+        <span class="priv-hero-badge-title">100% Local Processing</span>
+        <span class="priv-hero-badge-body">Your genome is analyzed entirely on your iPhone. Zero data uploaded. Zero cloud storage. Zero risk.</span>
+      </div>
+    </div>
+    <p class="priv-competitive">Unlike services that upload your DNA to cloud servers, GeneGaze processes everything on your device.</p>
     <div class="ctas">
       <a href="#waitlist" class="btp"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Get early access</a>
       <a href="#what-we-analyze" class="btg">See what's inside <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -535,6 +577,22 @@
         </article>
 
       </div>
+
+      <!-- Clinical Validation Bar -->
+      <div class="clinical-bar fi" role="region" aria-label="Clinical standards">
+        <h3>Built on clinical-grade standards</h3>
+        <p>GeneGaze is built on ACMG/AMP clinical variant classification guidelines — the same framework used in professional genetics labs. Analysis is population-aware, drawing on gnomAD v4 frequency data across diverse global ancestries so your results are never one-size-fits-all.</p>
+        <p style="margin-bottom:var(--sp3)">Results cross-reference six validated reference databases:</p>
+        <div class="db-pills" role="list" aria-label="Reference databases">
+          <span class="db-pill" role="listitem">ClinVar</span>
+          <span class="db-pill" role="listitem">PharmGKB</span>
+          <span class="db-pill" role="listitem">GWAS Catalog</span>
+          <span class="db-pill" role="listitem">OMIM</span>
+          <span class="db-pill" role="listitem">gnomAD v4</span>
+          <span class="db-pill" role="listitem">ICD-10/11</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -606,6 +664,30 @@
     </div>
   </section>
 
+  <!-- Important Information -->
+  <section class="sec info-section" id="important-info" aria-labelledby="info-h">
+    <div class="wrap">
+      <div class="fi" style="text-align:center;margin-bottom:var(--sp10)">
+        <p class="slbl">Important Information</p>
+        <h2 class="sh2" id="info-h">Know what you're<br>looking at.</h2>
+        <p class="sbody" style="margin-inline:auto">GeneGaze gives you unprecedented insight into your own genome — and that power comes with important context to use it wisely.</p>
+      </div>
+      <div class="info-grid fi">
+        <div class="info-card warn">
+          <span class="info-icon" aria-hidden="true">⚠️</span>
+          <h3>About Consumer Genotyping Results</h3>
+          <p>Consumer genotyping chips (like those from 23andMe and AncestryDNA) can produce false positives at rates around 40% for certain variant types. GeneGaze results are for educational and informational purposes only — they are not a medical diagnosis. Significant findings should always be confirmed with clinical-grade testing through your healthcare provider.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-icon" aria-hidden="true">🧑‍⚕️</span>
+          <h3>Questions About Your Results?</h3>
+          <p>A genetic counselor can help you understand complex findings, decide whether confirmatory testing makes sense, and put your results in the context of your personal and family history. These licensed professionals specialize in exactly this kind of guidance.</p>
+          <p style="margin-top:var(--sp4)"><a href="https://findageneticcounselor.nsgc.org/" target="_blank" rel="noopener noreferrer">Find a Genetic Counselor →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="sec pricing" id="pricing" aria-labelledby="price-h">
     <div class="wrap">
@@ -650,6 +732,19 @@
       </div>
     </div>
   </section>
+
+  <!-- Educational Purpose Disclaimer -->
+  <div class="edu-disclaimer" role="note" aria-label="Educational purpose statement">
+    <div class="edu-disclaimer-inner">
+      <div class="edu-disclaimer-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="edu-disclaimer-text">
+        <h3>For Educational &amp; Informational Purposes Only</h3>
+        <p>GeneGaze is for educational and informational purposes only. It is not a medical device, does not provide medical advice, and should not be used for making medical decisions without consulting a qualified healthcare provider. Results reflect statistical associations from published research and are not diagnostic. If you have concerns about your health, please speak with a licensed medical professional.</p>
+      </div>
+    </div>
+  </div>
 
   <div class="igbar" role="complementary" aria-label="Instagram">
     <div class="wrap iginner">
@@ -750,7 +845,7 @@
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      document.querySelectorAll('.sec,.what,.features,.preview,.privacy-section,.price-section,.wlist').forEach(el => {
+      document.querySelectorAll('.sec,.what,.features,.preview,.privacy-section,.price-section,.wlist,.info-section').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
