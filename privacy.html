@@ -32,6 +32,10 @@
     nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--sp4) var(--sp6);display:flex;align-items:center;justify-content:space-between;background:color-mix(in oklch,var(--bg) 80%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--div)}
     .logo{display:flex;align-items:center;gap:var(--sp2);font-family:var(--fd);font-size:var(--text-lg);font-weight:700;letter-spacing:-.02em}
     .logo-star{color:var(--gd)}
+    .screen-dark{display:block}
+    .screen-light{display:none}
+    [data-theme="light"] .screen-dark{display:none}
+    [data-theme="light"] .screen-light{display:block}
     .nav-r{display:flex;align-items:center;gap:var(--sp3)}
     .tbtn{width:36px;height:36px;border-radius:var(--r-full);background:var(--card);border:1px solid var(--bdr);color:var(--mu);display:flex;align-items:center;justify-content:center}
     .tbtn:hover{color:var(--tx);border-color:var(--pr)}
@@ -81,7 +85,8 @@
 
   <nav aria-label="Main navigation">
     <a href="index.html" class="logo" aria-label="GeneGaze home">
-      <img src="logo-light.png" alt="" width="36" height="36" style="border-radius:6px" />
+      <img src="logo-dark.png" alt="" width="36" height="36" style="border-radius:6px" class="screen-dark" />
+      <img src="logo-light.png" alt="" width="36" height="36" style="border-radius:6px" class="screen-light" />
       <span>GeneGaze</span>
     </a>
     <div class="nav-r">
