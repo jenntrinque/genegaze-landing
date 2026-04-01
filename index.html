@@ -120,8 +120,16 @@
     [data-theme="light"] .analyze-card:hover{border-color:rgba(14,122,140,.25);box-shadow:0 4px 24px rgba(14,122,140,.08)}
     [data-theme="light"] .wimg{box-shadow:0 12px 40px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04)}
     [data-theme="light"] footer{background:#f0efec;border-top-color:rgba(0,0,0,.06)}
+    /* Light mode animated clouds */
+    [data-theme="light"] .cloud{position:fixed;top:0;height:120px;opacity:0.35;pointer-events:none;z-index:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cellipse cx='100' cy='40' rx='90' ry='25' fill='%23fff'/%3E%3Cellipse cx='60' cy='30' rx='50' ry='22' fill='%23fff'/%3E%3Cellipse cx='140' cy='32' rx='55' ry='20' fill='%23fff'/%3E%3Cellipse cx='100' cy='25' rx='40' ry='18' fill='%23fff'/%3E%3C/svg%3E") no-repeat center/contain}
+    .cloud-1{width:280px;animation:cloud-drift 45s linear infinite}
+    .cloud-2{width:200px;top:40px;animation:cloud-drift-slow 60s linear infinite;opacity:0.25}
+    .cloud-3{width:240px;top:15px;animation:cloud-drift 55s linear infinite;animation-delay:-20s;opacity:0.2}
+    .dark .cloud{display:none}
     .hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--bg) 100%)}
-    [data-theme="light"] .hbg::after{background:linear-gradient(to bottom,transparent 20%,var(--bg) 85%)}
+    [data-theme="light"] .hbg::after{background:linear-gradient(to bottom,transparent 15%,var(--bg) 70%)}
+    [data-theme="light"] .what{background:var(--surf)}
+    [data-theme="light"] .analyze{background:var(--surf)}
     .badge{display:inline-flex;align-items:center;gap:var(--sp2);padding:var(--sp1) var(--sp3) var(--sp1) var(--sp2);border-radius:var(--r-full);border:1px solid var(--gd);background:var(--gg);font-size:var(--text-xs);font-weight:700;color:var(--gd);letter-spacing:.07em;text-transform:uppercase;margin-bottom:var(--sp6);animation:float 6s ease-in-out infinite}
     .bdot{width:6px;height:6px;border-radius:50%;background:var(--gd);animation:pdot 2s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
@@ -378,6 +386,10 @@
 <body>
   <a href="#hero" class="sr-only" style="position:fixed;top:1rem;left:1rem;z-index:9999;padding:.5rem 1rem;background:var(--pr);color:var(--bg);border-radius:.5rem">Skip to content</a>
   <canvas id="stars" aria-hidden="true"></canvas>
+  <!-- Animated clouds (light mode only) -->
+  <div class="cloud cloud-1" aria-hidden="true"></div>
+  <div class="cloud cloud-2" aria-hidden="true"></div>
+  <div class="cloud cloud-3" aria-hidden="true"></div>
 
   <nav aria-label="Main navigation">
     <a href="#" class="logo" aria-label="GeneGaze home">
