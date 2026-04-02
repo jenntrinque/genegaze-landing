@@ -12,7 +12,7 @@
   <meta property="og:description" content="Scan 1,145+ clinically significant variants from your raw 23andMe or AncestryDNA file. No cloud upload. No subscription." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://genegaze.com/" />
-  <meta property="og:image" content="https://genegaze.com/app-overview.png" />
+  <meta property="og:image" content="https://genegaze.com/app-overview-dark-new.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="GeneGaze genomic health analysis app — health markers, ancestry, and traits" />
@@ -21,7 +21,7 @@
   <meta name="twitter:site" content="@GeneGaze" />
   <meta name="twitter:title" content="GeneGaze – StarGaze Your DNA" />
   <meta name="twitter:description" content="1,145+ variants. One night sky. Your genome, analyzed on-device." />
-  <meta name="twitter:image" content="https://genegaze.com/app-overview.png" />
+  <meta name="twitter:image" content="https://genegaze.com/app-overview-dark-new.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,6 +51,16 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
   <link rel="apple-touch-icon" href="./icon-192.png">
   <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <script>
+    /* ── LAUNCH CONFIG ─────────────────────────────
+     * Flip these values on launch day (May 13, 2026):
+     * 1. Set GENEGAZE_LAUNCHED = true
+     * 2. Set GENEGAZE_APP_STORE_URL to the real App Store link
+     * Then push to GitHub — Vercel auto-deploys.
+     */
+    var GENEGAZE_LAUNCHED = false;
+    var GENEGAZE_APP_STORE_URL = 'https://apps.apple.com/app/genegaze';
+  </script>
   <style>
     :root{--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-hero:clamp(3rem,.5rem + 7vw,8rem);--sp1:.25rem;--sp2:.5rem;--sp3:.75rem;--sp4:1rem;--sp5:1.25rem;--sp6:1.5rem;--sp8:2rem;--sp10:2.5rem;--sp12:3rem;--sp16:4rem;--sp20:5rem;--sp24:6rem;--r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;--r-xl:1rem;--r-2xl:1.5rem;--r-full:9999px;--t:180ms cubic-bezier(.16,1,.3,1);--w:960px;--fw:1200px;--fd:'Zodiak','Georgia',serif;--fb:'Satoshi','Inter',sans-serif}
     [data-theme="dark"],:root{--bg:#0b0c12;--surf:#0e0f18;--card:#161829;--div:rgba(255,255,255,.05);--bdr:rgba(255,255,255,.08);--tx:#e8e9f0;--mu:#8e90a8;--fa:#6b6e86;--pr:#53cae3;--pv:#8b5cf6;--pg:rgba(79,195,206,.18);--gd:#e8cc6b;--gg:rgba(212,168,71,.15);--sh:0 12px 40px rgba(0,0,0,.6);--gl:0 0 48px rgba(79,195,206,.12);--hover-glow:0 0 0 1px rgba(79,195,206,.15),0 0 28px rgba(79,195,206,.18),0 0 52px rgba(139,92,246,.10)}
@@ -451,6 +461,11 @@
       <a href="#what-we-analyze" class="btg">See what's inside <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="shint" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>scroll</div>
+    <!-- App Store download button — hidden until launch -->
+    <div class="launch-cta" style="display:none;margin-top:var(--sp4);" aria-hidden="true">
+      <a href="#" class="btp appstore-link" id="hero-download">Download on the App Store&thinsp;✦</a>
+      <p style="font-size:var(--text-xs);color:var(--fa);margin-top:var(--sp2)">Requires iOS 17+ · Works with 23andMe &amp; AncestryDNA raw data</p>
+    </div>
   </section>
 
   <section class="sec what" id="what" aria-labelledby="what-h">
@@ -916,6 +931,65 @@
       // Lock hero background height to prevent mobile address-bar zoom
       const hbg = document.querySelector('.hbg');
       if (hbg) { hbg.style.height = window.innerHeight + 'px'; }
+    })();
+
+    // ── LAUNCH DAY SWITCH ────────────────────────
+    // When GENEGAZE_LAUNCHED = true (set in <head>):
+    // - Badge: "Coming to the App Store" → "Available on the App Store"
+    // - Nav CTA: "Get early access" → "Download now"
+    // - Hero CTAs: swap waitlist buttons for App Store download
+    // - Waitlist section: hide form, show download CTA
+    // - Pricing CTA: link to App Store
+    (function(){
+      if(typeof GENEGAZE_LAUNCHED==='undefined'||!GENEGAZE_LAUNCHED)return;
+      var url=typeof GENEGAZE_APP_STORE_URL!=='undefined'?GENEGAZE_APP_STORE_URL:'https://apps.apple.com/app/genegaze';
+
+      // Badge text
+      var badge=document.querySelector('.badge');
+      if(badge){badge.innerHTML='<span class="bdot"></span>Available on the App Store';}
+
+      // Nav CTA
+      var ncta=document.querySelector('.ncta');
+      if(ncta){ncta.href=url;ncta.innerHTML='\u2726&nbsp;Download now';}
+
+      // Hero buttons — replace early access with download
+      var heroBtp=document.querySelector('.hero .ctas .btp');
+      if(heroBtp){heroBtp.href=url;heroBtp.innerHTML='Download GeneGaze \u2014 $9.99&thinsp;\u2726';}
+      var heroBtg=document.querySelector('.hero .ctas .btg');
+      if(heroBtg){heroBtg.href=url;heroBtg.innerHTML='App Store <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';}
+
+      // Show the hidden launch CTA in hero
+      var launchCta=document.querySelector('.launch-cta');
+      if(launchCta){launchCta.style.display='block';launchCta.setAttribute('aria-hidden','false');}
+      var heroDownload=document.getElementById('hero-download');
+      if(heroDownload)heroDownload.href=url;
+
+      // Pricing CTA
+      var priceCta=document.querySelector('.pricing .btp');
+      if(priceCta){priceCta.href=url;priceCta.innerHTML='Download on the App Store&thinsp;\u2726';}
+
+      // Waitlist section — swap form for download
+      var wform=document.getElementById('wl-form');
+      if(wform)wform.style.display='none';
+      var wcard=document.querySelector('.wcard');
+      if(wcard){
+        var wsub=wcard.querySelector('.wsub');
+        if(wsub)wsub.textContent='GeneGaze is live on the App Store. Download now and StarGaze your DNA.';
+        var wh=wcard.querySelector('h2');
+        if(wh)wh.innerHTML='Your sky is<br>ready.&thinsp;\u2726';
+        // Add download button after subtitle
+        if(wsub){
+          var dlBtn=document.createElement('a');
+          dlBtn.href=url;
+          dlBtn.className='btp';
+          dlBtn.style.cssText='display:inline-flex;margin:var(--sp6) auto 0;';
+          dlBtn.innerHTML='Download GeneGaze&thinsp;\u2726';
+          wsub.parentNode.insertBefore(dlBtn,wsub.nextSibling);
+        }
+      }
+
+      // Update all .appstore-link elements
+      document.querySelectorAll('.appstore-link').forEach(function(el){el.href=url;});
     })();
 
   </script>
