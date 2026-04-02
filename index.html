@@ -869,11 +869,8 @@
         });
 
         /* Submit to HubSpot — non-authenticated public form submission */
-        /* Note: With HubSpot tracking code installed, the form is also auto-captured.
-           This explicit API call is a secondary path. Create a form in HubSpot UI at:
-           Marketing > Forms > Create Form (email only) to get a form GUID,
-           then replace 'waitlist-genegaze' below with that GUID. */
-        fetch(HS_FORM_API+'/'+HS_PORTAL+'/waitlist-genegaze',{
+        /* HubSpot form: "GeneGaze Early Access Waitlist" — created 2026-04-02 */
+        fetch(HS_FORM_API+'/'+HS_PORTAL+'/0125a77e-e3ac-4367-80cb-4d22289b998d',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:hsPayload
