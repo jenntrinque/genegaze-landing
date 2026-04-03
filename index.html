@@ -65,7 +65,7 @@
     :root{--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-hero:clamp(3rem,.5rem + 7vw,8rem);--sp1:.25rem;--sp2:.5rem;--sp3:.75rem;--sp4:1rem;--sp5:1.25rem;--sp6:1.5rem;--sp8:2rem;--sp10:2.5rem;--sp12:3rem;--sp16:4rem;--sp20:5rem;--sp24:6rem;--r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;--r-xl:1rem;--r-2xl:1.5rem;--r-full:9999px;--t:180ms cubic-bezier(.16,1,.3,1);--w:960px;--fw:1200px;--fd:'Zodiak','Georgia',serif;--fb:'Satoshi','Inter',sans-serif}
     [data-theme="dark"],:root{--bg:#0b0c12;--surf:#0e0f18;--card:#161829;--div:rgba(255,255,255,.05);--bdr:rgba(255,255,255,.08);--tx:#e8e9f0;--mu:#8e90a8;--fa:#6b6e86;--pr:#53cae3;--pv:#8b5cf6;--pg:rgba(79,195,206,.18);--gd:#e8cc6b;--gg:rgba(212,168,71,.15);--sh:0 12px 40px rgba(0,0,0,.6);--gl:0 0 48px rgba(79,195,206,.12);--hover-glow:0 0 0 1px rgba(79,195,206,.15),0 0 28px rgba(79,195,206,.18),0 0 52px rgba(139,92,246,.10)}
     [data-theme="light"]{--bg:#FBF8F2;--surf:#FBF8F2;--card:#fffefa;--div:rgba(0,0,0,.08);--bdr:rgba(0,0,0,.12);--tx:#1a1a2e;--mu:#4a4c64;--fa:#7e80a0;--pr:#1a8a9e;--pv:#6d28d9;--pg:rgba(13,122,133,.14);--gd:#9e7c10;--gg:rgba(140,100,20,.10);--sh:0 12px 40px rgba(0,0,0,.10);--gl:0 0 40px rgba(13,122,133,.06);--hover-glow:0 0 0 1px rgba(140,90,0,.20),0 0 24px rgba(180,120,0,.18),0 0 44px rgba(160,100,0,.10)}
-    [data-theme="light"] body{background:linear-gradient(180deg,#fdf6e3 0%,#faf0d6 15%,#f8edd0 30%,#FBF8F2 50%,#f5e8c8 70%,#f3e2b8 85%,#f0dcae 100%)}
+    [data-theme="light"] body{background:linear-gradient(180deg,#f5ecd4 0%,#f2e6c8 15%,#f0e2c0 30%,#eeddb8 50%,#ecd9b0 70%,#ead4a8 85%,#e8d0a0 100%)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:5rem;overscroll-behavior:none}
     body{min-height:100dvh;font-family:var(--fb);font-size:var(--text-base);color:var(--tx);background:var(--bg);overflow-x:hidden;overscroll-behavior:none}
@@ -148,25 +148,23 @@
     [data-theme="light"] .sun-glow{position:fixed;top:-15%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,245,220,0.90) 0%,rgba(255,235,190,0.60) 18%,rgba(255,220,150,0.30) 35%,rgba(255,200,120,0.12) 55%,transparent 70%);pointer-events:none;z-index:1;animation:sun-core-pulse 8s ease-in-out infinite}
     /* Sun rays — 8 distinct beams, each different angle/color/speed */
     [data-theme="light"] .sun-ray{position:fixed;pointer-events:none;z-index:1;border-radius:0 4px 4px 0;transform-origin:right center}
-    .sun-ray-1{top:2%;right:4%;width:550px;height:10px;background:linear-gradient(270deg,rgba(220,180,80,0.75) 0%,rgba(210,165,60,0.45) 30%,rgba(200,150,50,0.15) 65%,transparent);transform:rotate(15deg);animation:ray-a 6s ease-in-out infinite}
-    .sun-ray-2{top:6%;right:2%;width:450px;height:12px;background:linear-gradient(270deg,rgba(200,160,50,0.65) 0%,rgba(190,145,40,0.35) 35%,transparent);transform:rotate(35deg);animation:ray-b 7s ease-in-out infinite}
-    .sun-ray-3{top:-2%;right:8%;width:380px;height:8px;background:linear-gradient(270deg,rgba(190,145,35,0.60) 0%,rgba(180,130,30,0.30) 40%,transparent);transform:rotate(55deg);animation:ray-a 5s ease-in-out infinite .5s}
-    .sun-ray-4{top:0;right:6%;width:600px;height:6px;background:linear-gradient(270deg,rgba(230,200,120,0.60) 0%,rgba(220,185,100,0.30) 35%,transparent);transform:rotate(-5deg);animation:ray-b 8s ease-in-out infinite 1s}
-    .sun-ray-5{top:8%;right:1%;width:420px;height:11px;background:linear-gradient(270deg,rgba(225,190,110,0.55) 0%,rgba(215,175,90,0.28) 40%,transparent);transform:rotate(70deg);animation:ray-a 6.5s ease-in-out infinite .3s}
-    .sun-ray-6{top:4%;right:10%;width:320px;height:14px;background:linear-gradient(270deg,rgba(210,170,80,0.55) 0%,rgba(200,155,65,0.25) 45%,transparent);transform:rotate(-12deg);animation:ray-b 7.5s ease-in-out infinite 2s}
-    .sun-ray-7{top:-4%;right:5%;width:500px;height:5px;background:linear-gradient(270deg,rgba(200,160,60,0.50) 0%,rgba(185,140,45,0.22) 45%,transparent);transform:rotate(45deg);animation:ray-a 5.5s ease-in-out infinite 1.5s}
-    .sun-ray-8{top:10%;right:8%;width:400px;height:8px;background:linear-gradient(270deg,rgba(210,155,100,0.50) 0%,rgba(200,140,85,0.25) 40%,transparent);transform:rotate(-25deg);animation:ray-b 6s ease-in-out infinite .8s}
+    .sun-ray-1{top:2%;right:4%;width:550px;height:12px;background:linear-gradient(270deg,rgba(255,255,240,0.85) 0%,rgba(255,250,220,0.50) 30%,rgba(255,245,200,0.15) 65%,transparent);transform:rotate(15deg);animation:ray-a 6s ease-in-out infinite}
+    .sun-ray-2{top:6%;right:2%;width:450px;height:14px;background:linear-gradient(270deg,rgba(255,250,230,0.75) 0%,rgba(255,240,200,0.40) 35%,transparent);transform:rotate(35deg);animation:ray-b 7s ease-in-out infinite}
+    .sun-ray-3{top:-2%;right:8%;width:380px;height:10px;background:linear-gradient(270deg,rgba(255,245,210,0.70) 0%,rgba(255,235,180,0.35) 40%,transparent);transform:rotate(55deg);animation:ray-a 5s ease-in-out infinite .5s}
+    .sun-ray-4{top:0;right:6%;width:600px;height:8px;background:linear-gradient(270deg,rgba(255,255,245,0.70) 0%,rgba(255,250,225,0.35) 35%,transparent);transform:rotate(-5deg);animation:ray-b 8s ease-in-out infinite 1s}
+    .sun-ray-5{top:8%;right:1%;width:420px;height:13px;background:linear-gradient(270deg,rgba(255,252,235,0.65) 0%,rgba(255,245,210,0.30) 40%,transparent);transform:rotate(70deg);animation:ray-a 6.5s ease-in-out infinite .3s}
+    .sun-ray-6{top:4%;right:10%;width:320px;height:16px;background:linear-gradient(270deg,rgba(255,248,220,0.65) 0%,rgba(255,240,195,0.30) 45%,transparent);transform:rotate(-12deg);animation:ray-b 7.5s ease-in-out infinite 2s}
+    .sun-ray-7{top:-4%;right:5%;width:500px;height:6px;background:linear-gradient(270deg,rgba(255,250,225,0.60) 0%,rgba(255,240,200,0.25) 45%,transparent);transform:rotate(45deg);animation:ray-a 5.5s ease-in-out infinite 1.5s}
+    .sun-ray-8{top:10%;right:8%;width:400px;height:10px;background:linear-gradient(270deg,rgba(255,235,200,0.55) 0%,rgba(255,225,175,0.25) 40%,transparent);transform:rotate(-25deg);animation:ray-b 6s ease-in-out infinite .8s}
     [data-theme="dark"] .sun-glow,[data-theme="dark"] .sun-ray{display:none}
     .dark .sun-glow,.dark .sun-ray{display:none}
     @keyframes sun-core-pulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
     @keyframes ray-a{0%,100%{opacity:0.55}50%{opacity:1}}
     @keyframes ray-b{0%,100%{opacity:0.5}40%{opacity:0.95}}
     /* Section dividers — warm gold hairlines between sections in light mode */
-    [data-theme="light"] .sec.features,[data-theme="light"] .sec.preview,[data-theme="light"] .sec.pricing{background:none;border-top:2px solid rgba(190,155,80,0.18);position:relative}
+    [data-theme="light"] .sec.features,[data-theme="light"] .sec.preview,[data-theme="light"] .sec.pricing{background:none !important;border-top:2px solid rgba(170,135,60,0.25);position:relative}
     [data-theme="light"] .sec.features::after,[data-theme="light"] .sec.preview::after,[data-theme="light"] .sec.pricing::after{content:'';position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:80px;height:4px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,rgba(190,155,80,0.30),transparent)}
-    /* Alternating warm tint for sections */
-    [data-theme="light"] .sec.features{background:linear-gradient(180deg,rgba(245,230,195,0.12) 0%,transparent 30%,transparent 70%,rgba(245,230,195,0.08) 100%)}
-    [data-theme="light"] .sec.pricing{background:linear-gradient(180deg,rgba(240,220,175,0.10) 0%,transparent 50%)}
+    /* Light section backgrounds stay transparent to show body gradient */
     /* Cards in light mode — warmer shadow for depth */
     [data-theme="light"] .info-card,[data-theme="light"] .analyze-card{box-shadow:0 2px 12px rgba(150,120,60,0.08),0 0 0 1px rgba(170,140,80,0.10)}
     @keyframes cloud-drift{0%{left:-300px}100%{left:110vw}}
