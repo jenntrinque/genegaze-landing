@@ -130,13 +130,25 @@
     [data-theme="light"] .analyze-card:hover{border-color:rgba(14,122,140,.25);box-shadow:0 4px 24px rgba(14,122,140,.08)}
     [data-theme="light"] .wimg{box-shadow:0 12px 40px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04)}
     [data-theme="light"] footer{background:var(--bg);border-top-color:transparent}
+    [data-theme="light"] .igbar{background:var(--bg)}
     [data-theme="light"] .flinks a{color:#4a4c64;text-decoration:underline;text-decoration-color:rgba(0,0,0,.15)}
     [data-theme="light"] .flinks a:hover{color:#0e7a8c;text-decoration-color:#0e7a8c}
+    [data-theme="light"] .iglink{border-color:rgba(0,0,0,.15);color:#4a4c64}
+    [data-theme="light"] .iglink:hover{border-color:#0e7a8c;color:#0e7a8c;background:rgba(14,122,140,.06)}
+    [data-theme="light"] .iginner p{color:#4a4c64}
     /* Light mode animated clouds */
-    [data-theme="light"] .cloud{position:fixed;top:0;height:160px;opacity:0.55;pointer-events:none;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cellipse cx='100' cy='40' rx='90' ry='25' fill='%23fffdf5'/%3E%3Cellipse cx='60' cy='30' rx='50' ry='22' fill='%23fffef8'/%3E%3Cellipse cx='140' cy='32' rx='55' ry='20' fill='%23fffdf5'/%3E%3Cellipse cx='100' cy='25' rx='40' ry='18' fill='%23fffef8'/%3E%3C/svg%3E") no-repeat center/contain;filter:blur(2px)}
-    .cloud-1{width:340px;left:-340px;animation:cloud-drift 45s linear infinite}
-    .cloud-2{width:260px;top:50px;left:-260px;animation:cloud-drift-slow 60s linear infinite;opacity:0.40}
-    .cloud-3{width:240px;top:15px;animation:cloud-drift 55s linear infinite;animation-delay:-20s;opacity:0.2}
+    [data-theme="light"] .cloud{position:fixed;top:0;height:180px;opacity:0.80;pointer-events:none;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cellipse cx='100' cy='40' rx='90' ry='25' fill='%23fffdf5'/%3E%3Cellipse cx='60' cy='30' rx='50' ry='22' fill='%23fffef8'/%3E%3Cellipse cx='140' cy='32' rx='55' ry='20' fill='%23fffdf5'/%3E%3Cellipse cx='100' cy='25' rx='40' ry='18' fill='%23fffef8'/%3E%3C/svg%3E") no-repeat center/contain;filter:blur(2px)}
+    .cloud-1{width:380px;left:-380px;animation:cloud-drift 45s linear infinite}
+    .cloud-2{width:300px;top:50px;left:-300px;animation:cloud-drift-slow 60s linear infinite;opacity:0.55}
+    .cloud-3{width:280px;top:15px;animation:cloud-drift 55s linear infinite;animation-delay:-20s;opacity:0.40}
+    [data-theme="light"] .sun-glow{position:fixed;top:-15%;right:0;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,120,0.35) 0%,rgba(255,200,100,0.18) 35%,rgba(255,180,80,0.06) 55%,transparent 70%);pointer-events:none;z-index:1;animation:sun-pulse 12s ease-in-out infinite}
+    [data-theme="light"] .sun-ray{position:fixed;pointer-events:none;z-index:1;border-radius:6px;animation:sun-pulse 12s ease-in-out infinite}
+    .sun-ray-1{top:-5%;right:12%;width:400px;height:16px;background:linear-gradient(90deg,rgba(255,210,100,0.12),rgba(255,200,80,0.22) 50%,rgba(255,210,100,0.05));transform:rotate(15deg)}
+    .sun-ray-2{top:2%;right:8%;width:350px;height:12px;background:linear-gradient(90deg,rgba(255,210,100,0.10),rgba(255,200,80,0.18) 50%,rgba(255,210,100,0.04));transform:rotate(45deg)}
+    .sun-ray-3{top:-8%;right:18%;width:300px;height:12px;background:linear-gradient(90deg,rgba(255,210,100,0.10),rgba(255,200,80,0.16) 50%,rgba(255,210,100,0.03));transform:rotate(-20deg);transform-origin:right center}
+    [data-theme="dark"] .sun-glow,[data-theme="dark"] .sun-ray{display:none}
+    .dark .sun-glow,.dark .sun-ray{display:none}
+    @keyframes sun-pulse{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
     @keyframes cloud-drift{0%{left:-300px}100%{left:110vw}}
     @keyframes cloud-drift-slow{0%{left:-220px}100%{left:110vw}}
     .dark .cloud{display:none}
@@ -409,7 +421,11 @@
 <body>
   <a href="#hero" class="sr-only" style="position:fixed;top:1rem;left:1rem;z-index:9999;padding:.5rem 1rem;background:var(--pr);color:var(--bg);border-radius:.5rem">Skip to content</a>
   <canvas id="stars" aria-hidden="true"></canvas>
-  <!-- Animated clouds (light mode only) -->
+  <!-- Animated clouds + sun glow (light mode only) -->
+  <div class="sun-glow" aria-hidden="true"></div>
+  <div class="sun-ray sun-ray-1" aria-hidden="true"></div>
+  <div class="sun-ray sun-ray-2" aria-hidden="true"></div>
+  <div class="sun-ray sun-ray-3" aria-hidden="true"></div>
   <div class="cloud cloud-1" aria-hidden="true"></div>
   <div class="cloud cloud-2" aria-hidden="true"></div>
   <div class="cloud cloud-3" aria-hidden="true"></div>
